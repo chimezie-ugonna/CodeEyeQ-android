@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name" translatable="false">CodeEyeQ</string>
+    <string name="dot" translatable="false">•</string>
+    <string name="empty" translatable="false"> </string>
+    <string name="log_in">Log In</string>
+    <string name="get_started">Get Started</string>
+    <string name="onboarding_title_1">Learn how to code</string>
+    <string name="onboarding_title_2">Debug and test</string>
+    <string name="onboarding_title_3">Peer to peer learning</string>
+    <string name="onboarding_description_1">Get the skills you need to create apps, websites and programs.</string>
+    <string name="onboarding_description_2">Answer all the quizzes given to you to master the art of coding.</string>
+    <string name="onboarding_description_3">Build your coding community while learning in peers.</string>
+</resources>
