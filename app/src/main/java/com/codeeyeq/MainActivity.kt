@@ -136,14 +136,14 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = OnBoadingSlideAdapter(this, illustrations, titles, descriptions)
     }
 
-    override fun onBackPressed() {
-        moveTaskToBack(true)
-    }
-
     private fun getColorResCompat(id: Int): Int {
         val resolvedAttr = TypedValue()
         this.theme.resolveAttribute(id, resolvedAttr, true)
         val colorRes = resolvedAttr.run { if (resourceId != 0) resourceId else data }
         return ContextCompat.getColor(this, colorRes)
+    }
+
+    override fun onBackPressed() {
+        moveTaskToBack(true)
     }
 }
