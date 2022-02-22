@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button?>(R.id.get_started).setOnClickListener {
             Toast.makeText(
                 this,
-                "Get started",
+                "Get started again",
                 Toast.LENGTH_LONG
             ).show()
         }
