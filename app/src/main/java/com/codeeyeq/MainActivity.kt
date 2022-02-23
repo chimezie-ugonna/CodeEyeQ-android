@@ -6,7 +6,6 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
         SetAppTheme(this).set()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -28,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button?>(R.id.get_started).setOnClickListener {
             Toast.makeText(
                 this,
-                "Get started ",
+                "Get started",
                 Toast.LENGTH_LONG
             ).show()
         }
@@ -136,14 +134,14 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = OnBoadingSlideAdapter(this, illustrations, titles, descriptions)
     }
 
+    override fun onBackPressed() {
+        moveTaskToBack(true)
+    }
+
     private fun getColorResCompat(id: Int): Int {
         val resolvedAttr = TypedValue()
         this.theme.resolveAttribute(id, resolvedAttr, true)
         val colorRes = resolvedAttr.run { if (resourceId != 0) resourceId else data }
         return ContextCompat.getColor(this, colorRes)
-    }
-
-    override fun onBackPressed() {
-        moveTaskToBack(true)
     }
 }
