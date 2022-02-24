@@ -1,4 +1,3 @@
 package com.codeeyeq
 
-class test {
-}
+class test
