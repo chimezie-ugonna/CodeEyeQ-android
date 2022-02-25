@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/background_color"
+    tools:context=".MainActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/onboarding_slide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/dot_con"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/padding" />
+
+    <LinearLayout
+        android:id="@+id/dot_con"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/get_started"
+        android:layout_marginStart="@dimen/padding"
+        android:layout_marginEnd="@dimen/padding"
+        android:layout_marginBottom="@dimen/big"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/dot1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/half_radius"
+            android:layout_marginRight="@dimen/half_radius"
+            android:text="@string/dot"
+            android:textColor="?attr/current_dot_indicator_color"
+            android:textSize="@dimen/large"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dot2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/half_radius"
+            android:layout_marginRight="@dimen/half_radius"
+            android:text="@string/dot"
+            android:textColor="?attr/small_text_color"
+            android:textSize="@dimen/big"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dot3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/half_radius"
+            android:layout_marginRight="@dimen/half_radius"
+            android:text="@string/dot"
+            android:textColor="?attr/small_text_color"
+            android:textSize="@dimen/big"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/get_started"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/login"
+        android:layout_marginStart="@dimen/padding"
+        android:layout_marginEnd="@dimen/padding"
+        android:layout_marginBottom="@dimen/padding"
+        android:background="@drawable/solid"
+        android:text="@string/get_started"
+        android:textAllCaps="false"
+        android:textColor="?attr/solid_text_color"
+        android:textSize="@dimen/normal" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/padding"
+        android:layout_marginEnd="@dimen/padding"
+        android:layout_marginBottom="@dimen/padding"
+        android:background="@drawable/stroke"
+        android:text="@string/log_in"
+        android:textAllCaps="false"
+        android:textColor="?attr/stroke_text_color"
+        android:textSize="@dimen/normal" />
+
+</RelativeLayout>

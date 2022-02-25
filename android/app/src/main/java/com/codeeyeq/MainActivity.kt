@@ -1,35 +1,52 @@
 package com.codeeyeq
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
 import android.os.Bundle
-import android.util.TypedValue
+import android.os.Handler
+import android.os.Looper
+import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.PagerSnapHelper
-import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var img1: ImageView
+    private lateinit var img2: ImageView
+    private lateinit var img3: ImageView
+    private lateinit var title: TextView
+    private lateinit var description: TextView
+    private var shortAnimationDuration: Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
         SetAppTheme(this).set()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val dot1: TextView = findViewById(R.id.dot1)
-        val dot2: TextView = findViewById(R.id.dot2)
-        val dot3: TextView = findViewById(R.id.dot3)
+        img1 = findViewById(R.id.img1)
+        img2 = findViewById(R.id.img2)
+        img3 = findViewById(R.id.img3)
 
-        findViewById<Button?>(R.id.get_started).setOnClickListener {
+        title = findViewById(R.id.title)
+        description = findViewById(R.id.description)
+
+        shortAnimationDuration = resources.getInteger(android.R.integer.config_shortAnimTime)
+
+        Handler(Looper.getMainLooper()).postDelayed({ change() }, 5000)
+
+        findViewById<Button?>(R.id.getStarted).setOnClickListener {
             Toast.makeText(
                 this,
                 "Get started",
                 Toast.LENGTH_LONG
             ).show()
         }
+
         findViewById<Button?>(R.id.login).setOnClickListener {
             Toast.makeText(
                 this,
@@ -37,111 +54,126 @@ class MainActivity : AppCompatActivity() {
                 Toast.LENGTH_LONG
             ).show()
         }
+    }
 
-        val llm = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        val recyclerView: RecyclerView = findViewById(R.id.onboarding_slide)
-        PagerSnapHelper().attachToRecyclerView(recyclerView)
-        recyclerView.layoutManager = llm
-        recyclerView.setOnScrollChangeListener { _, _, _, _, _ ->
-            when (llm.findLastCompletelyVisibleItemPosition()) {
-                0 -> {
-                    dot1.setTextColor(
-                        getColorResCompat(R.attr.current_dot_indicator_color)
-                    )
-                    dot1.setTextSize(
-                        TypedValue.COMPLEX_UNIT_PX,
-                        resources.getDimension(R.dimen.large)
-                    )
-                    dot2.setTextColor(
-                        getColorResCompat(R.attr.small_text_color)
-                    )
-                    dot2.setTextSize(
-                        TypedValue.COMPLEX_UNIT_PX,
-                        resources.getDimension(R.dimen.big)
-                    )
-                    dot3.setTextColor(
-                        getColorResCompat(R.attr.small_text_color)
-                    )
-                    dot3.setTextSize(
-                        TypedValue.COMPLEX_UNIT_PX,
-                        resources.getDimension(R.dimen.big)
-                    )
-                }
-                1 -> {
-                    dot1.setTextColor(
-                        getColorResCompat(R.attr.small_text_color)
-                    )
-                    dot1.setTextSize(
-                        TypedValue.COMPLEX_UNIT_PX,
-                        resources.getDimension(R.dimen.big)
-                    )
-                    dot2.setTextColor(
-                        getColorResCompat(R.attr.current_dot_indicator_color)
-                    )
-                    dot2.setTextSize(
-                        TypedValue.COMPLEX_UNIT_PX,
-                        resources.getDimension(R.dimen.large)
-                    )
-                    dot3.setTextColor(
-                        getColorResCompat(R.attr.small_text_color)
-                    )
-                    dot3.setTextSize(
-                        TypedValue.COMPLEX_UNIT_PX,
-                        resources.getDimension(R.dimen.big)
-                    )
-                }
-                2 -> {
-                    dot1.setTextColor(
-                        getColorResCompat(R.attr.small_text_color)
-                    )
-                    dot1.setTextSize(
-                        TypedValue.COMPLEX_UNIT_PX,
-                        resources.getDimension(R.dimen.big)
-                    )
-                    dot2.setTextColor(
-                        getColorResCompat(R.attr.small_text_color)
-                    )
-                    dot2.setTextSize(
-                        TypedValue.COMPLEX_UNIT_PX,
-                        resources.getDimension(R.dimen.big)
-                    )
-                    dot3.setTextColor(
-                        getColorResCompat(R.attr.current_dot_indicator_color)
-                    )
-                    dot3.setTextSize(
-                        TypedValue.COMPLEX_UNIT_PX,
-                        resources.getDimension(R.dimen.large)
-                    )
-                }
-            }
+    private fun change() {
+        img2.apply {
+            alpha = 0f
+            visibility = View.VISIBLE
+
+            animate()
+                .alpha(1f)
+                .setDuration(shortAnimationDuration.toLong())
+                .setListener(null)
         }
 
-        val illustrations = ArrayList<Int>()
-        illustrations.add(R.drawable.illustration_1)
-        illustrations.add(R.drawable.illustration_2)
-        illustrations.add(R.drawable.illustration_3)
+        img1.animate()
+            .alpha(0f)
+            .setDuration(shortAnimationDuration.toLong())
+            .setListener(object : AnimatorListenerAdapter() {
+                override fun onAnimationEnd(animation: Animator) {
+                    img1.visibility = View.GONE
+                }
+            })
 
-        val titles = ArrayList<String>()
-        titles.add(resources.getString(R.string.onboarding_title_1))
-        titles.add(resources.getString(R.string.onboarding_title_2))
-        titles.add(resources.getString(R.string.onboarding_title_3))
+        title.startAnimation(
+            AnimationUtils.loadAnimation(
+                applicationContext,
+                R.anim.slide_up
+            )
+        )
+        description.startAnimation(
+            AnimationUtils.loadAnimation(
+                applicationContext,
+                R.anim.slide_up
+            )
+        )
 
-        val descriptions = ArrayList<String>()
-        descriptions.add(resources.getString(R.string.onboarding_description_1))
-        descriptions.add(resources.getString(R.string.onboarding_description_2))
-        descriptions.add(resources.getString(R.string.onboarding_description_3))
+        title.text = resources.getString(R.string.onboarding_title_2)
+        description.text = resources.getString(R.string.onboarding_description_2)
 
-        recyclerView.adapter = OnBoadingSlideAdapter(this, illustrations, titles, descriptions)
+        Handler(Looper.getMainLooper()).postDelayed({ change2() }, 5000)
+    }
+
+    private fun change2() {
+        img3.apply {
+            alpha = 0f
+            visibility = View.VISIBLE
+
+            animate()
+                .alpha(1f)
+                .setDuration(shortAnimationDuration.toLong())
+                .setListener(null)
+        }
+
+        img2.animate()
+            .alpha(0f)
+            .setDuration(shortAnimationDuration.toLong())
+            .setListener(object : AnimatorListenerAdapter() {
+                override fun onAnimationEnd(animation: Animator) {
+                    img2.visibility = View.GONE
+                }
+            })
+
+        title.startAnimation(
+            AnimationUtils.loadAnimation(
+                applicationContext,
+                R.anim.slide_up
+            )
+        )
+        description.startAnimation(
+            AnimationUtils.loadAnimation(
+                applicationContext,
+                R.anim.slide_up
+            )
+        )
+
+        title.text = resources.getString(R.string.onboarding_title_3)
+        description.text = resources.getString(R.string.onboarding_description_3)
+
+        Handler(Looper.getMainLooper()).postDelayed({ change3() }, 5000)
+    }
+
+    private fun change3() {
+        img1.apply {
+            alpha = 0f
+            visibility = View.VISIBLE
+
+            animate()
+                .alpha(1f)
+                .setDuration(shortAnimationDuration.toLong())
+                .setListener(null)
+        }
+
+        img3.animate()
+            .alpha(0f)
+            .setDuration(shortAnimationDuration.toLong())
+            .setListener(object : AnimatorListenerAdapter() {
+                override fun onAnimationEnd(animation: Animator) {
+                    img3.visibility = View.GONE
+                }
+            })
+
+        title.startAnimation(
+            AnimationUtils.loadAnimation(
+                applicationContext,
+                R.anim.slide_up
+            )
+        )
+        description.startAnimation(
+            AnimationUtils.loadAnimation(
+                applicationContext,
+                R.anim.slide_up
+            )
+        )
+
+        title.text = resources.getString(R.string.onboarding_title_1)
+        description.text = resources.getString(R.string.onboarding_description_1)
+
+        Handler(Looper.getMainLooper()).postDelayed({ change() }, 5000)
     }
 
     override fun onBackPressed() {
         moveTaskToBack(true)
-    }
-
-    private fun getColorResCompat(id: Int): Int {
-        val resolvedAttr = TypedValue()
-        this.theme.resolveAttribute(id, resolvedAttr, true)
-        val colorRes = resolvedAttr.run { if (resourceId != 0) resourceId else data }
-        return ContextCompat.getColor(this, colorRes)
     }
 }

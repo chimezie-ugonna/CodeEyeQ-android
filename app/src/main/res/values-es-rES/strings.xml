@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="log_in">Iniciar sesión</string>
+    <string name="get_started">Empezar</string>
+    <string name="onboarding_title_1">Aprende a codificar</string>
+    <string name="onboarding_title_2">Depurar y probar</string>
+    <string name="onboarding_title_3">Aprendizaje entre pares</string>
+    <string name="onboarding_description_1">Obtenga las habilidades que necesita para crear aplicaciones, sitios web y programas.</string>
+    <string name="onboarding_description_2">Responda todos los cuestionarios que se le den para dominar el arte de la codificación.</string>
+    <string name="onboarding_description_3">Construya su comunidad de codificación mientras aprende con sus compañeros.</string>
+</resources>
