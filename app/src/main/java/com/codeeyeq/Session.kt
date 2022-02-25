@@ -5,7 +5,10 @@ import android.content.SharedPreferences
 
 class Session(context: Context) {
     private val sp: SharedPreferences =
-        context.getSharedPreferences(R.string.app_name.toString(), Context.MODE_PRIVATE)
+        context.getSharedPreferences(
+            context.resources.getString(R.string.app_name),
+            Context.MODE_PRIVATE
+        )
     private val spe: SharedPreferences.Editor = sp.edit()
 
     /*fun appTheme(state: String) {
