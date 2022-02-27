@@ -7,6 +7,5 @@
         <attr name="small_text_color" format="color" />
         <attr name="solid_text_color" format="color" />
         <attr name="stroke_text_color" format="color" />
-        <attr name="current_dot_indicator_color" format="color" />
     </declare-styleable>
 </resources>

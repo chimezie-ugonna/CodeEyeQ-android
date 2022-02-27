@@ -52,25 +52,20 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/title"
+            <TextSwitcher
+                android:id="@+id/titleSwitcher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/padding"
-                android:gravity="center"
-                android:text="@string/onboarding_title_1"
-                android:textColor="?attr/big_text_color"
-                android:textSize="@dimen/big"
-                android:textStyle="bold" />
+                android:inAnimation="@android:anim/fade_in"
+                android:outAnimation="@android:anim/fade_out" />
 
-            <TextView
-                android:id="@+id/description"
+            <TextSwitcher
+                android:id="@+id/descriptionSwitcher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/onboarding_description_1"
-                android:textColor="?attr/small_text_color"
-                android:textSize="@dimen/normal" />
+                android:inAnimation="@android:anim/fade_in"
+                android:outAnimation="@android:anim/fade_out" />
         </LinearLayout>
     </LinearLayout>
 

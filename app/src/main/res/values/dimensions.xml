@@ -5,6 +5,7 @@
     <dimen name="normal">16sp</dimen>
     <dimen name="small">12sp</dimen>
     <dimen name="padding">10sp</dimen>
+    <dimen name="small_padding">5sp</dimen>
     <dimen name="radius">5sp</dimen>
     <dimen name="half_radius">2.5sp</dimen>
     <dimen name="thin">1sp</dimen>
