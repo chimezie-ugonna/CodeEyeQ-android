@@ -96,7 +96,7 @@ class MainActivity : AppCompatActivity() {
             ).show()
         }
 
-        Handler(Looper.getMainLooper()).postDelayed({ change1() }, 5000)
+        Handler(Looper.getMainLooper()).postDelayed({ change1() }, 3000)
     }
 
     private fun change1() {
@@ -122,7 +122,7 @@ class MainActivity : AppCompatActivity() {
         titleSwitcher.setText(titles[1])
         descriptionSwitcher.setText(descriptions[1])
 
-        Handler(Looper.getMainLooper()).postDelayed({ change2() }, 5000)
+        Handler(Looper.getMainLooper()).postDelayed({ change2() }, 3000)
     }
 
     private fun change2() {
@@ -148,7 +148,7 @@ class MainActivity : AppCompatActivity() {
         titleSwitcher.setText(titles[2])
         descriptionSwitcher.setText(descriptions[2])
 
-        Handler(Looper.getMainLooper()).postDelayed({ change3() }, 5000)
+        Handler(Looper.getMainLooper()).postDelayed({ change3() }, 3000)
     }
 
     private fun change3() {
@@ -174,7 +174,7 @@ class MainActivity : AppCompatActivity() {
         titleSwitcher.setText(titles[0])
         descriptionSwitcher.setText(descriptions[0])
 
-        Handler(Looper.getMainLooper()).postDelayed({ change1() }, 5000)
+        Handler(Looper.getMainLooper()).postDelayed({ change1() }, 3000)
     }
 
     private fun getColorResCompat(id: Int): Int {
