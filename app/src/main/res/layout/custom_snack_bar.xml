@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/padding">
+
+    <RelativeLayout
+        android:id="@+id/parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/error_red_solid"
+        android:padding="@dimen/padding"
+        tools:ignore="UselessParent">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="@dimen/icons"
+            android:layout_height="@dimen/icons"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/empty"
+            android:src="@mipmap/error_clear" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/padding"
+            android:layout_toEndOf="@+id/img"
+            android:gravity="center"
+            android:text="@string/log_in"
+            android:textColor="?attr/white"
+            android:textSize="@dimen/normal" />
+    </RelativeLayout>
+</RelativeLayout>

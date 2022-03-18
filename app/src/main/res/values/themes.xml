@@ -1,16 +1,35 @@
 <resources>
-    <!-- Base application theme. -->
+
     <style name="Theme.CodeEyeQ" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimaryDark">@color/white</item>
         <item name="android:statusBarColor">@color/white</item>
         <item name="colorAccent">@color/blue</item>
         <item name="android:windowLightStatusBar">true</item>
 
-        <item name="background_color">@color/white</item>
-        <item name="big_text_color">@color/black</item>
-        <item name="normal_text_color">@color/black</item>
-        <item name="small_text_color">@color/grey</item>
-        <item name="solid_text_color">@color/white</item>
-        <item name="stroke_text_color">@color/blue</item>
+        <item name="black">@color/black</item>
+        <item name="black_Grey">@color/black</item>
+        <item name="black_white">@color/black</item>
+        <item name="blue">@color/blue</item>
+        <item name="blue_black">@color/blue</item>
+        <item name="blue_white">@color/blue</item>
+        <item name="darkGreen">@color/darkGreen</item>
+        <item name="darkGreen_green">@color/darkGreen</item>
+        <item name="darkGreen_white">@color/darkGreen</item>
+        <item name="successGreen">@color/successGreen</item>
+        <item name="lightGreen_white">@color/lightGreen</item>
+        <item name="grey">@color/grey_shade_2</item>
+        <item name="borderGrey_white">@color/grey_shade_4</item>
+        <item name="lightBrown">@color/lightBrown</item>
+        <item name="lightBrown_white">@color/lightBrown</item>
+        <item name="pink">@color/pink</item>
+        <item name="pink_white">@color/pink</item>
+        <item name="errorRed">@color/errorRed</item>
+        <item name="wineRed_white">@color/wineRed</item>
+        <item name="white">@color/white</item>
+        <item name="white_blue">@color/white</item>
+        <item name="white_black">@color/white</item>
+        <item name="snow_night">@color/snow</item>
+        <item name="tintedBlue_white">@color/tinted_blue</item>
+        <item name="transparent">@color/transparent_light</item>
     </style>
 </resources>

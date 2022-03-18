@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name" translatable="false">CodeEyeQ</string>
-    <string name="dot" translatable="false">•</string>
+    <string name="app_version" translatable="false">Version 1.0.0</string>
+    <string name="web_client_id" translatable="false">45557246868-8qh72u4bmkopv6b632kgb85rahcd40d3.apps.googleusercontent.com</string>
     <string name="empty" translatable="false"> </string>
     <string name="log_in">Log In</string>
+    <string name="login">Login</string>
     <string name="get_started">Get Started</string>
     <string name="onboarding_title_1">Learn how to code</string>
     <string name="onboarding_title_2">Debug and test</string>
@@ -10,4 +12,37 @@
     <string name="onboarding_description_1">Get the skills you need to create apps, websites and programs.</string>
     <string name="onboarding_description_2">Answer all the quizzes given to you to master the art of coding.</string>
     <string name="onboarding_description_3">Build your coding community while learning in peers.</string>
+    <string name="create_account">Create Account</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="example_password" translatable="false">********</string>
+    <string name="john_doe" translatable="false">John Doe</string>
+    <string name="example_email" translatable="false">example@codeeyeq.com</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="google_signin">Sign in with Google</string>
+    <string name="google_signup">Sign up with Google</string>
+    <string name="create_an_account_with_one_of_the_following_options">Create an account with one of the following options.</string>
+    <string name="log_in_with_one_of_the_following_options">Log in with one of the following options.</string>
+    <string name="full_name_error_message">Please enter your first and last name.</string>
+    <string name="email_error_message">Please enter a valid email.</string>
+    <string name="password_error_message">Please enter a valid password of at least 8 characters.</string>
+    <string name="log_out">Log Out</string>
+    <string name="ERROR_ACCOUNT_EXISTS_WITH_DIFFERENT_CREDENTIAL">An account already exists with the same email address but with a different log in method.</string>
+    <string name="ERROR_WEAK_PASSWORD">Password is too weak and can easily be compromised.</string>
+    <string name="ERROR_EMAIL_ALREADY_IN_USE">This email address is already in use by another account.</string>
+    <string name="ERROR_CREDENTIAL_ALREADY_IN_USE">These credentials are already associated with a different account.</string>
+    <string name="ERROR_USER_DISABLED">This account has been disabled.</string>
+    <string name="ERROR_USER_NOT_FOUND">This email address is not associated with any account.</string>
+    <string name="ERROR_USER_TOKEN_EXPIRED">This account\'s credential is no longer valid. There need to be a new log in operation.</string>
+    <string name="ERROR_INVALID_CREDENTIAL">Password is incorrect.</string>
+    <string name="ERROR_WRONG_PASSWORD">Password is invalid or the account does not have a password because it was created using a third party service.</string>
+    <string name="ERROR_OPERATION_NOT_ALLOWED">This operation is not allowed.</string>
+    <string name="ERROR_UNKNOWN">An unknown error occurred.</string>
+    <string name="SIGN_IN_CANCELLED">Operation failed because sign in was cancelled.</string>
+    <string name="SIGN_IN_FAILED">Operation failed because sign in failed.</string>
+    <string name="SIGN_IN_CURRENTLY_IN_PROGRESS">Operation failed because there is already a sign in happening.</string>
+    <string name="server_error_message">Operation failed because a server error occurred.</string>
+    <string name="password_link_sent">Password reset link sent.</string>
+    <string name="no_internet">There is no internet connection.</string>
 </resources>

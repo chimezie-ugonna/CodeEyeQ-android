@@ -6,6 +6,18 @@ import androidx.appcompat.app.AppCompatDelegate
 
 class SetAppTheme(private val context: Context) {
     fun set() {
+        when (Session(context).appTheme()) {
+            "system" -> {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+            }
+            "light" -> {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
+            "dark" -> {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            }
+        }
+
         when {
             AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM -> {
                 when (context.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {

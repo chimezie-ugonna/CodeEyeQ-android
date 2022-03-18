@@ -2,6 +2,7 @@ package com.codeeyeq
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
+import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
 import android.os.Handler
@@ -9,11 +10,15 @@ import android.os.Looper
 import android.util.TypedValue
 import android.view.Gravity
 import android.view.View
-import android.widget.*
+import android.widget.ImageView
+import android.widget.RelativeLayout
+import android.widget.TextSwitcher
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
     private lateinit var img1: ImageView
@@ -29,7 +34,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
         SetAppTheme(this).set()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -47,21 +51,21 @@ class MainActivity : AppCompatActivity() {
         titleSwitcher = findViewById(R.id.titleSwitcher)
         titleSwitcher.setFactory {
             title = TextView(this@MainActivity)
-            title.setTextSize(TypedValue.COMPLEX_UNIT_PX, resources.getDimension(R.dimen.big))
+            title.setTextSize(TypedValue.COMPLEX_UNIT_PX, resources.getDimension(R.dimen.heading))
             title.text = titles[0]
             title.gravity = Gravity.CENTER
-            title.setTypeface(null, Typeface.BOLD)
-            title.setTextColor(getColorResCompat(R.attr.big_text_color))
+            title.setTypeface(null, Typeface.NORMAL)
+            title.setTextColor(getColorResCompat(R.attr.black_white))
             title
         }
-
-        descriptions.add(resources.getString(R.string.onboarding_description_1))
-        descriptions.add(resources.getString(R.string.onboarding_description_2))
-        descriptions.add(resources.getString(R.string.onboarding_description_3))
 
         titleSwitcher.setText(titles[0])
         titleSwitcher.inAnimation.duration = shortAnimationDuration.toLong()
         titleSwitcher.outAnimation.duration = shortAnimationDuration.toLong()
+
+        descriptions.add(resources.getString(R.string.onboarding_description_1))
+        descriptions.add(resources.getString(R.string.onboarding_description_2))
+        descriptions.add(resources.getString(R.string.onboarding_description_3))
 
         descriptionSwitcher = findViewById(R.id.descriptionSwitcher)
         descriptionSwitcher.setFactory {
@@ -72,7 +76,7 @@ class MainActivity : AppCompatActivity() {
             )
             description.gravity = Gravity.CENTER
             description.setTypeface(null, Typeface.NORMAL)
-            description.setTextColor(getColorResCompat(R.attr.small_text_color))
+            description.setTextColor(getColorResCompat(R.attr.grey))
             description
         }
 
@@ -80,23 +84,23 @@ class MainActivity : AppCompatActivity() {
         descriptionSwitcher.inAnimation.duration = shortAnimationDuration.toLong()
         descriptionSwitcher.outAnimation.duration = shortAnimationDuration.toLong()
 
-        findViewById<Button?>(R.id.getStarted).setOnClickListener {
-            Toast.makeText(
-                this,
-                "Get started",
-                Toast.LENGTH_LONG
-            ).show()
+        findViewById<RelativeLayout?>(R.id.getStarted).setOnClickListener {
+            startActivity(Intent(this, GetStarted::class.java))
         }
 
-        findViewById<Button?>(R.id.login).setOnClickListener {
-            Toast.makeText(
-                this,
-                "Login",
-                Toast.LENGTH_LONG
-            ).show()
+        findViewById<RelativeLayout?>(R.id.login).setOnClickListener {
+            startActivity(Intent(this, LogIn::class.java))
         }
 
         Handler(Looper.getMainLooper()).postDelayed({ change1() }, 3000)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        if (Firebase.auth.currentUser != null) {
+            startActivity(Intent(this, Home::class.java))
+            finish()
+        }
     }
 
     private fun change1() {

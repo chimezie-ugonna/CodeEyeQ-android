@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_in">Conecte-se</string>
+    <string name="login">Conecte-se</string>
+    <string name="get_started">Iniciar</string>
+    <string name="onboarding_title_1">Aprenda a codificar</string>
+    <string name="onboarding_title_2">Depurar e testar</string>
+    <string name="onboarding_title_3">Aprendizagem entre pares</string>
+    <string name="onboarding_description_1">Obtenha as habilidades necessárias para criar aplicativos, sites e programas.</string>
+    <string name="onboarding_description_2">Responda a todos os questionários dados a você para dominar a arte da codificação.</string>
+    <string name="onboarding_description_3">Construa sua comunidade de codificação enquanto aprende com colegas.</string>
+    <string name="create_account">Criar uma conta</string>
+    <string name="full_name">Nome completo</string>
+    <string name="email">E-mail</string>
+    <string name="password">Senha</string>
+    <string name="forgot_password">Esqueceu a senha</string>
+    <string name="google_signin">Faça login no Google</string>
+    <string name="google_signup">Inscreva-se com o Google</string>
+    <string name="create_an_account_with_one_of_the_following_options">Crie uma conta com uma das seguintes opções.</string>
+    <string name="log_in_with_one_of_the_following_options">Faça login com uma das opções a seguir.</string>
+    <string name="full_name_error_message">Por favor, insira seu primeiro e último nome.</string>
+    <string name="email_error_message">por favor digite um email válido.</string>
+    <string name="password_error_message">Digite uma senha válida de pelo menos 8 caracteres.</string>
+    <string name="log_out">Sair</string>
+    <string name="ERROR_ACCOUNT_EXISTS_WITH_DIFFERENT_CREDENTIAL">Já existe uma conta com o mesmo endereço de e-mail, mas com um método de login diferente.</string>
+    <string name="ERROR_WEAK_PASSWORD">A senha é muito fraca e pode ser facilmente comprometida.</string>
+    <string name="ERROR_EMAIL_ALREADY_IN_USE">Este endereço de e-mail já está sendo usado por outra conta.</string>
+    <string name="ERROR_CREDENTIAL_ALREADY_IN_USE">Essas credenciais já estão associadas a uma conta diferente.</string>
+    <string name="ERROR_USER_DISABLED">essa conta foi desativada.</string>
+    <string name="ERROR_USER_NOT_FOUND">Este endereço de e-mail não está associado a nenhuma conta.</string>
+    <string name="ERROR_USER_TOKEN_EXPIRED">A credencial desta conta não é mais válida. É necessário que haja um novo log em operação.</string>
+    <string name="ERROR_INVALID_CREDENTIAL">Senha é incorreta.</string>
+    <string name="ERROR_WRONG_PASSWORD">A senha é inválida ou a conta não tem senha porque foi criada usando um serviço de terceiros.</string>
+    <string name="ERROR_OPERATION_NOT_ALLOWED">Esta operação não é permitida.</string>
+    <string name="ERROR_UNKNOWN">Ocorreu um erro desconhecido.</string>
+    <string name="SIGN_IN_CANCELLED">A operação falhou porque o login foi cancelado.</string>
+    <string name="SIGN_IN_FAILED">A operação falhou porque o login falhou.</string>
+    <string name="SIGN_IN_CURRENTLY_IN_PROGRESS">A operação falhou porque já existe uma entrada acontecendo.</string>
+    <string name="server_error_message">A operação falhou porque ocorreu um erro no servidor.</string>
+    <string name="password_link_sent">Link de redefinição de senha enviado.</string>
+    <string name="no_internet">Não há conexão com a internet.</string>
+</resources>

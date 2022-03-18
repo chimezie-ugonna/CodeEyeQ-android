@@ -11,12 +11,12 @@ class Session(context: Context) {
         )
     private val spe: SharedPreferences.Editor = sp.edit()
 
-    /*fun appTheme(state: String) {
+    fun appTheme(state: String) {
         spe.putString("appTheme", state)
         spe.commit()
     }
 
-    fun appTheme(): String {
-        return sp.getString("appTheme", "").toString()
-    }*/
+    fun appTheme(): String? {
+        return sp.getString("appTheme", "system")
+    }
 }

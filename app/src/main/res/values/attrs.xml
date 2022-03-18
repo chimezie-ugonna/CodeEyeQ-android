@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="ds">
-        <attr name="background_color" format="color" />
-        <attr name="big_text_color" format="color" />
-        <attr name="normal_text_color" format="color" />
-        <attr name="small_text_color" format="color" />
-        <attr name="solid_text_color" format="color" />
-        <attr name="stroke_text_color" format="color" />
+        <attr name="black" format="color" />
+        <attr name="black_Grey" format="color" />
+        <attr name="black_white" format="color" />
+        <attr name="blue" format="color" />
+        <attr name="blue_black" format="color" />
+        <attr name="blue_white" format="color" />
+        <attr name="darkGreen" format="color" />
+        <attr name="darkGreen_green" format="color" />
+        <attr name="darkGreen_white" format="color" />
+        <attr name="successGreen" format="color" />
+        <attr name="lightGreen_white" format="color" />
+        <attr name="grey" format="color" />
+        <attr name="lightBrown" format="color" />
+        <attr name="lightBrown_white" format="color" />
+        <attr name="pink" format="color" />
+        <attr name="pink_white" format="color" />
+        <attr name="errorRed" format="color" />
+        <attr name="wineRed_white" format="color" />
+        <attr name="white" format="color" />
+        <attr name="white_blue" format="color" />
+        <attr name="white_black" format="color" />
+        <attr name="snow_night" format="color" />
+        <attr name="tintedBlue_white" format="color" />
+        <attr name="borderGrey_white" format="color" />
+        <attr name="transparent" format="color" />
     </declare-styleable>
 </resources>

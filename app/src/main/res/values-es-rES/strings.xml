@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="log_in">Iniciar sesión</string>
     <string name="get_started">Empezar</string>
     <string name="onboarding_title_1">Aprende a codificar</string>
@@ -9,4 +8,35 @@
     <string name="onboarding_description_1">Obtenga las habilidades que necesita para crear aplicaciones, sitios web y programas.</string>
     <string name="onboarding_description_2">Responda todos los cuestionarios que se le den para dominar el arte de la codificación.</string>
     <string name="onboarding_description_3">Construya su comunidad de codificación mientras aprende con sus compañeros.</string>
+    <string name="create_account">crear una cuenta</string>
+    <string name="full_name">nombre completo</string>
+    <string name="email">Email</string>
+    <string name="password">clave</string>
+    <string name="forgot_password">Has olvidado tu contraseña</string>
+    <string name="google_signin">Inicia sesión con Google</string>
+    <string name="google_signup">Regístrese con Google</string>
+    <string name="create_an_account_with_one_of_the_following_options">Crea una cuenta con una de las siguientes opciones.</string>
+    <string name="log_in_with_one_of_the_following_options">Inicie sesión con una de las siguientes opciones.</string>
+    <string name="login">acceso</string>
+    <string name="full_name_error_message">Por favor introduce tu primer nombre y apellido.</string>
+    <string name="email_error_message">Por favor introduzca una dirección de correo electrónico válida.</string>
+    <string name="password_error_message">Introduzca una contraseña válida de al menos 8 caracteres.</string>
+    <string name="log_out">Cerrar sesión</string>
+    <string name="ERROR_ACCOUNT_EXISTS_WITH_DIFFERENT_CREDENTIAL">Ya existe una cuenta con la misma dirección de correo electrónico pero con un método de inicio de sesión diferente.</string>
+    <string name="ERROR_WEAK_PASSWORD">La contraseña es demasiado débil y puede verse comprometida fácilmente.</string>
+    <string name="ERROR_EMAIL_ALREADY_IN_USE">Esta dirección de correo electrónico ya está en uso por otra cuenta.</string>
+    <string name="ERROR_CREDENTIAL_ALREADY_IN_USE">Estas credenciales ya están asociadas con una cuenta diferente.</string>
+    <string name="ERROR_USER_DISABLED">Esta cuenta se ha inhabilitado.</string>
+    <string name="ERROR_USER_NOT_FOUND">Esta dirección de correo electrónico no está asociada a ninguna cuenta.</string>
+    <string name="ERROR_USER_TOKEN_EXPIRED">La credencial de esta cuenta ya no es válida. Debe haber una nueva operación de inicio de sesión.</string>
+    <string name="ERROR_INVALID_CREDENTIAL">La contraseña es incorrecta.</string>
+    <string name="ERROR_WRONG_PASSWORD">La contraseña no es válida o la cuenta no tiene contraseña porque se creó con un servicio de terceros.</string>
+    <string name="ERROR_OPERATION_NOT_ALLOWED">Esta operación no está permitida.</string>
+    <string name="ERROR_UNKNOWN">Un error desconocido ocurrió.</string>
+    <string name="SIGN_IN_CANCELLED">La operación falló porque se canceló el inicio de sesión.</string>
+    <string name="SIGN_IN_FAILED">La operación falló porque no se pudo iniciar sesión.</string>
+    <string name="SIGN_IN_CURRENTLY_IN_PROGRESS">La operación falló porque ya se está iniciando una sesión.</string>
+    <string name="server_error_message">La operación falló porque ocurrió un error del servidor.</string>
+    <string name="password_link_sent">Enlace de restablecimiento de contraseña enviado.</string>
+    <string name="no_internet">No hay conexión a Internet.</string>
 </resources>

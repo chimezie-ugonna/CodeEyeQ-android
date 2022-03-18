@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="log_in">लॉग इन करें</string>
     <string name="get_started">शुरू हो जाओ</string>
     <string name="onboarding_title_1">कोड करना सीखें</string>
@@ -9,4 +8,35 @@
     <string name="onboarding_description_1">एप्लिकेशन, वेबसाइट और प्रोग्राम बनाने के लिए आवश्यक कौशल प्राप्त करें।</string>
     <string name="onboarding_description_2">कोडिंग की कला में महारत हासिल करने के लिए आपको दिए गए सभी प्रश्नों के उत्तर दें।</string>
     <string name="onboarding_description_3">साथियों में सीखते हुए अपना कोडिंग समुदाय बनाएं।</string>
+    <string name="create_account">खाता बनाएं</string>
+    <string name="full_name">पूरा नाम</string>
+    <string name="email">ईमेल</string>
+    <string name="password">पासवर्ड</string>
+    <string name="forgot_password">पासवर्ड भूल गए</string>
+    <string name="google_signin">Google के साथ साइन इन करें</string>
+    <string name="google_signup">Google के साथ साइन अप करें</string>
+    <string name="create_an_account_with_one_of_the_following_options">निम्नलिखित विकल्पों में से एक के साथ एक खाता बनाएँ।</string>
+    <string name="login">लॉग इन करें</string>
+    <string name="log_in_with_one_of_the_following_options">निम्न विकल्पों में से किसी एक के साथ लॉग इन करें।</string>
+    <string name="full_name_error_message">कृप्या अपना पेहला और आखीरी नाम दर्ज करे।</string>
+    <string name="email_error_message">कृपया अपना मान्य ईमेल लिखें।</string>
+    <string name="password_error_message">कृपया कम से कम 8 वर्णों का एक मान्य पासवर्ड दर्ज करें।</string>
+    <string name="log_out">लॉग आउट</string>
+    <string name="ERROR_ACCOUNT_EXISTS_WITH_DIFFERENT_CREDENTIAL">एक ही ईमेल पते के साथ एक खाता पहले से मौजूद है लेकिन एक अलग लॉग इन विधि के साथ।</string>
+    <string name="ERROR_WEAK_PASSWORD">पासवर्ड बहुत कमजोर है और आसानी से समझौता किया जा सकता है।</string>
+    <string name="ERROR_EMAIL_ALREADY_IN_USE">यह ईमेल पता पहले से ही किसी अन्य खाते द्वारा उपयोग में है।</string>
+    <string name="ERROR_CREDENTIAL_ALREADY_IN_USE">ये क्रेडेंशियल पहले से ही किसी दूसरे खाते से जुड़े हुए हैं.</string>
+    <string name="ERROR_USER_DISABLED">यह खाता बंद कर दिया गया है।</string>
+    <string name="ERROR_USER_NOT_FOUND">यह ईमेल पता किसी भी खाते से संबद्ध नहीं है।</string>
+    <string name="ERROR_USER_TOKEN_EXPIRED">इस खाते का क्रेडेंशियल अब मान्य नहीं है. ऑपरेशन में एक नया लॉग होने की जरूरत है।</string>
+    <string name="ERROR_INVALID_CREDENTIAL">पासवर्ड गलत है।</string>
+    <string name="ERROR_WRONG_PASSWORD">पासवर्ड अमान्य है या खाते में पासवर्ड नहीं है क्योंकि इसे किसी तृतीय पक्ष सेवा का उपयोग करके बनाया गया था।</string>
+    <string name="ERROR_OPERATION_NOT_ALLOWED">इस ऑपरेशन की अनुमति नहीं है।</string>
+    <string name="ERROR_UNKNOWN">एक अज्ञात त्रुटि हुई।</string>
+    <string name="SIGN_IN_CANCELLED">ऑपरेशन विफल हुआ क्योंकि साइन इन रद्द कर दिया गया था।</string>
+    <string name="SIGN_IN_FAILED">साइन इन विफल होने के कारण कार्रवाई विफल रही.</string>
+    <string name="SIGN_IN_CURRENTLY_IN_PROGRESS">ऑपरेशन विफल हुआ क्योंकि पहले से ही होने का संकेत है।</string>
+    <string name="server_error_message">सर्वर त्रुटि उत्पन्न होने के कारण कार्रवाई विफल रही।</string>
+    <string name="password_link_sent">पासवर्ड रीसेट लिंक भेजा गया।</string>
+    <string name="no_internet">कोई इंटरनेट कनेक्शन नहीं है।</string>
 </resources>

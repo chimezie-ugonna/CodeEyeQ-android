@@ -3,20 +3,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/background_color"
+    android:background="?attr/white_black"
+    android:paddingTop="@dimen/padding"
+    android:paddingBottom="@dimen/padding"
     tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/app_name"
+        android:textColor="?attr/black_white"
+        android:textSize="@dimen/heading" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/getStarted"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/app_name"
+        android:layout_marginTop="@dimen/padding"
+        android:layout_marginBottom="@dimen/padding"
         android:orientation="vertical">
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="80">
+            android:layout_weight="70">
 
             <ImageView
                 android:id="@+id/img3"
@@ -46,9 +60,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_margin="@dimen/padding"
+            android:layout_marginStart="@dimen/padding"
             android:layout_marginTop="@dimen/padding"
-            android:layout_weight="20"
+            android:layout_marginEnd="@dimen/padding"
+            android:layout_weight="30"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -69,7 +84,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <Button
+    <RelativeLayout
         android:id="@+id/getStarted"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -77,24 +92,49 @@
         android:layout_marginStart="@dimen/padding"
         android:layout_marginEnd="@dimen/padding"
         android:layout_marginBottom="@dimen/padding"
-        android:background="@drawable/solid"
-        android:text="@string/get_started"
-        android:textAllCaps="false"
-        android:textColor="?attr/solid_text_color"
-        android:textSize="@dimen/normal" />
+        android:background="@drawable/blue_white_solid"
+        android:padding="@dimen/padding">
 
-    <Button
+        <ImageView
+            android:layout_width="@dimen/icons"
+            android:layout_height="@dimen/icons"
+            android:layout_alignParentStart="true"
+            android:contentDescription="@string/empty"
+            android:src="@drawable/account_circle" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/get_started"
+            android:textColor="?attr/white_black"
+            android:textSize="@dimen/big" />
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="@dimen/padding"
         android:layout_marginEnd="@dimen/padding"
-        android:layout_marginBottom="@dimen/padding"
-        android:background="@drawable/stroke"
-        android:text="@string/log_in"
-        android:textAllCaps="false"
-        android:textColor="?attr/stroke_text_color"
-        android:textSize="@dimen/normal" />
+        android:background="@drawable/tinted_blue_white_solid"
+        android:padding="@dimen/padding">
 
+        <ImageView
+            android:layout_width="@dimen/icons"
+            android:layout_height="@dimen/icons"
+            android:layout_alignParentStart="true"
+            android:contentDescription="@string/empty"
+            android:src="@drawable/mail_outline" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/log_in"
+            android:textColor="?attr/blue_white"
+            android:textSize="@dimen/big" />
+    </RelativeLayout>
 </RelativeLayout>

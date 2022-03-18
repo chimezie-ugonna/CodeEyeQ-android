@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="?attr/snow_night" />
+    <stroke
+        android:width="@dimen/thin"
+        android:color="?attr/blue" />
+    <corners
+        android:bottomLeftRadius="@dimen/big_radius"
+        android:bottomRightRadius="@dimen/big_radius"
+        android:topLeftRadius="@dimen/big_radius"
+        android:topRightRadius="@dimen/big_radius" />
+</shape>
