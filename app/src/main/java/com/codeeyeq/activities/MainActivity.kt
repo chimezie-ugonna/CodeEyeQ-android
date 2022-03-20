@@ -1,4 +1,4 @@
-package com.codeeyeq
+package com.codeeyeq.activities
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
@@ -17,6 +17,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.codeeyeq.R
+import com.codeeyeq.SetAppTheme
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
