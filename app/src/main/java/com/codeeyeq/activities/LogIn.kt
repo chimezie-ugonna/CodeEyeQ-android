@@ -1,4 +1,4 @@
-package com.codeeyeq
+package com.codeeyeq.activities
 
 import android.app.Activity
 import android.content.Context
@@ -19,6 +19,7 @@ import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.codeeyeq.*
 import com.google.android.gms.auth.api.signin.*
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.GoogleAuthProvider
@@ -26,11 +27,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.messaging.FirebaseMessaging
 
-class GetStarted : AppCompatActivity() {
-    private lateinit var fullName: EditText
-    private lateinit var fullNameHeader: TextView
-    private lateinit var fullNameError: TextView
-    private var fullNameFieldState: String = "normal"
+class LogIn : AppCompatActivity() {
     private lateinit var email: EditText
     private lateinit var emailHeader: TextView
     private lateinit var emailError: TextView
@@ -57,7 +54,6 @@ class GetStarted : AppCompatActivity() {
                         account =
                             GoogleSignIn.getSignedInAccountFromIntent(result.data)
                                 .getResult(ApiException::class.java)
-
                         val credential = GoogleAuthProvider.getCredential(account.idToken, null)
                         Firebase.auth.signInWithCredential(credential)
                             .addOnCompleteListener(this) { task ->
@@ -65,7 +61,7 @@ class GetStarted : AppCompatActivity() {
                                     join(
                                         Firebase.auth.currentUser?.uid,
                                         Firebase.auth.currentUser?.displayName,
-                                        Firebase.auth.currentUser?.email
+                                        Firebase.auth.currentUser?.email,
                                     )
                                 }
                             }.addOnFailureListener(
@@ -119,63 +115,9 @@ class GetStarted : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         SetAppTheme(this).set()
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_get_started)
+        setContentView(R.layout.activity_log_in)
 
         fsl = FullScreenLoader(this)
-        fullNameHeader = findViewById(R.id.fullNameHeader)
-        fullNameError = findViewById(R.id.fullNameError)
-        fullName = findViewById(R.id.fullName)
-        fullName.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-            }
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                if (fullNameFieldState == "error" || fullNameFieldState == "success") {
-                    fullNameCheck()
-                }
-            }
-
-            override fun afterTextChanged(p0: Editable?) {
-
-            }
-        })
-        fullName.setOnFocusChangeListener { _, b ->
-            if (b) {
-                if (fullNameFieldState == "normal") {
-                    fullNameHeader.setTextColor(getColorResCompat(R.attr.blue))
-                    fullName.setBackgroundResource(R.drawable.snow_night_solid_blue_stroke)
-                    fullName.setCompoundDrawablesWithIntrinsicBounds(
-                        R.drawable.account_circle_active,
-                        0,
-                        0,
-                        0
-                    )
-                    fullName.compoundDrawablePadding =
-                        resources.getDimension(R.dimen.padding).toInt()
-                    fullNameError.text = ""
-                    fullNameError.visibility = View.GONE
-                    fullNameFieldState = "active"
-                }
-            } else {
-                if (fullNameFieldState == "active") {
-                    fullNameHeader.setTextColor(getColorResCompat(R.attr.grey))
-                    fullName.setBackgroundResource(R.drawable.snow_night_solid_grey_stroke)
-                    fullName.setCompoundDrawablesWithIntrinsicBounds(
-                        R.drawable.account_circle_normal,
-                        0,
-                        0,
-                        0
-                    )
-                    fullName.compoundDrawablePadding =
-                        resources.getDimension(R.dimen.padding).toInt()
-                    fullNameError.text = ""
-                    fullNameError.visibility = View.GONE
-                    fullNameFieldState = "normal"
-                }
-            }
-        }
-
         emailHeader = findViewById(R.id.emailHeader)
         emailError = findViewById(R.id.emailError)
         email = findViewById(R.id.email)
@@ -309,26 +251,53 @@ class GetStarted : AppCompatActivity() {
         gsc = GoogleSignIn.getClient(this, gso)
 
         findViewById<RelativeLayout>(R.id.back_con).setOnClickListener { finish() }
-        findViewById<RelativeLayout>(R.id.googleSignUp).setOnClickListener {
+        findViewById<RelativeLayout>(R.id.googleSignIn).setOnClickListener {
             requestCode = 1
             onActivityResult.launch(gsc.signInIntent)
         }
+        findViewById<TextView>(R.id.forgotPassword).setOnClickListener {
+            emailCheck()
+            if (email.text.isNotEmpty() && android.util.Patterns.EMAIL_ADDRESS.matcher(
+                    email.text
+                )
+                    .matches()
+            ) {
+                hideKeyboard()
+                if (InternetCheck(this, findViewById(R.id.parent)).status()) {
+                    fsl.show()
+                    Firebase.auth.sendPasswordResetEmail(email.text.toString())
+                        .addOnCompleteListener { task ->
+                            if (task.isSuccessful) {
+                                fsl.hide()
+                                CustomSnackBar(
+                                    this,
+                                    findViewById(R.id.parent),
+                                    getString(R.string.password_link_sent),
+                                    "success"
+                                ).show()
+                            }
+                        }.addOnFailureListener(
+                            OnFailureListener(
+                                this,
+                                findViewById(R.id.parent),
+                                fsl
+                            )
+                        )
+                }
+            }
+        }
         findViewById<RelativeLayout>(R.id.button).setOnClickListener {
-            fullNameCheck()
             emailCheck()
             passwordCheck()
-            if (fullName.text.isNotEmpty() && email.text.isNotEmpty() && password.text.isNotEmpty() && fullName.text.split(
-                    " "
-                ).size > 1 && fullName.text.split(" ")[0] != "" && fullName.text.split(
-                    " "
-                )[1] != ""
-                && android.util.Patterns.EMAIL_ADDRESS.matcher(email.text)
+            if (email.text.isNotEmpty() && password.text.isNotEmpty() && android.util.Patterns.EMAIL_ADDRESS.matcher(
+                    email.text
+                )
                     .matches() && password.text.length >= 8
             ) {
                 hideKeyboard()
                 if (InternetCheck(this, findViewById(R.id.parent)).status()) {
                     fsl.show()
-                    Firebase.auth.createUserWithEmailAndPassword(
+                    Firebase.auth.signInWithEmailAndPassword(
                         email.text.toString(),
                         password.text.toString()
                     )
@@ -336,7 +305,7 @@ class GetStarted : AppCompatActivity() {
                             if (task.isSuccessful) {
                                 join(
                                     Firebase.auth.currentUser?.uid,
-                                    fullName.text.toString(),
+                                    "",
                                     Firebase.auth.currentUser?.email,
                                 )
                             }
@@ -349,41 +318,6 @@ class GetStarted : AppCompatActivity() {
                         )
                 }
             }
-        }
-    }
-
-    private fun fullNameCheck() {
-        if (fullName.text.split(" ").size > 1 && fullName.text.split(" ")[0] != "" && fullName.text.split(
-                " "
-            )[1] != ""
-        ) {
-            fullNameHeader.setTextColor(getColorResCompat(R.attr.darkGreen))
-            fullName.setBackgroundResource(R.drawable.snow_night_solid_dark_green_stroke)
-            fullName.setCompoundDrawablesWithIntrinsicBounds(
-                R.drawable.account_circle_success,
-                0,
-                0,
-                0
-            )
-            fullName.compoundDrawablePadding =
-                resources.getDimension(R.dimen.padding).toInt()
-            fullNameError.text = ""
-            fullNameError.visibility = View.GONE
-            fullNameFieldState = "success"
-        } else {
-            fullNameHeader.setTextColor(getColorResCompat(R.attr.errorRed))
-            fullName.setBackgroundResource(R.drawable.snow_night_solid_error_red_stroke)
-            fullName.setCompoundDrawablesWithIntrinsicBounds(
-                R.drawable.account_circle_error,
-                0,
-                0,
-                0
-            )
-            fullName.compoundDrawablePadding =
-                resources.getDimension(R.dimen.padding).toInt()
-            fullNameError.text = getString(R.string.full_name_error_message)
-            fullNameError.visibility = View.VISIBLE
-            fullNameFieldState = "error"
         }
     }
 
