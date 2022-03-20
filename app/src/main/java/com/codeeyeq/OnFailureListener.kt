@@ -110,5 +110,4 @@ class OnFailureListener(val context: Context, val parent: View, private val fsl:
             ).show()
         }
     }
-
 }

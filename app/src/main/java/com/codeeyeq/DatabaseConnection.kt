@@ -64,6 +64,7 @@ class DatabaseConnection(var context: Context) {
                 params["device_brand"] = device_brand
                 params["device_model"] = device_model
                 params["app_version"] = context.resources.getString(R.string.app_version)
+                params["os_version"] = android.os.Build.VERSION.RELEASE
                 return params
             }
         }
