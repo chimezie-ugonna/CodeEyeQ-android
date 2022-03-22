@@ -18,70 +18,65 @@
         android:textColor="?attr/black_white"
         android:textSize="@dimen/heading" />
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/getStarted"
+        android:layout_above="@+id/textSwitcher"
         android:layout_below="@+id/app_name"
         android:layout_marginTop="@dimen/padding"
+        android:layout_marginBottom="@dimen/padding">
+
+        <ImageView
+            android:id="@+id/img3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/empty"
+            android:src="@drawable/illustration_3"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/img2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/empty"
+            android:src="@drawable/illustration_2"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/empty"
+            android:src="@drawable/illustration_1" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/textSwitcher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/getStarted"
+        android:layout_marginStart="@dimen/padding"
+        android:layout_marginTop="@dimen/padding"
+        android:layout_marginEnd="@dimen/padding"
         android:layout_marginBottom="@dimen/padding"
+        android:gravity="center"
         android:orientation="vertical">
 
-        <FrameLayout
+        <TextSwitcher
+            android:id="@+id/titleSwitcher"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="70">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding"
+            android:inAnimation="@android:anim/fade_in"
+            android:outAnimation="@android:anim/fade_out" />
 
-            <ImageView
-                android:id="@+id/img3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:contentDescription="@string/empty"
-                android:src="@drawable/illustration_3"
-                android:visibility="gone" />
-
-            <ImageView
-                android:id="@+id/img2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:contentDescription="@string/empty"
-                android:src="@drawable/illustration_2"
-                android:visibility="gone" />
-
-            <ImageView
-                android:id="@+id/img1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:contentDescription="@string/empty"
-                android:src="@drawable/illustration_1" />
-
-        </FrameLayout>
-
-        <LinearLayout
+        <TextSwitcher
+            android:id="@+id/descriptionSwitcher"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/padding"
-            android:layout_marginTop="@dimen/padding"
-            android:layout_marginEnd="@dimen/padding"
-            android:layout_weight="30"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <TextSwitcher
-                android:id="@+id/titleSwitcher"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/padding"
-                android:inAnimation="@android:anim/fade_in"
-                android:outAnimation="@android:anim/fade_out" />
-
-            <TextSwitcher
-                android:id="@+id/descriptionSwitcher"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inAnimation="@android:anim/fade_in"
-                android:outAnimation="@android:anim/fade_out" />
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            android:inAnimation="@android:anim/fade_in"
+            android:outAnimation="@android:anim/fade_out" />
     </LinearLayout>
 
     <RelativeLayout

@@ -1,4 +1,4 @@
-package com.codeeyeq
+package com.codeeyeq.models
 
 import com.google.firebase.messaging.FirebaseMessagingService
 

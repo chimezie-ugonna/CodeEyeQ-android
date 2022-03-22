@@ -1,7 +1,8 @@
-package com.codeeyeq
+package com.codeeyeq.models
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.codeeyeq.R
 
 class Session(context: Context) {
     private val sp: SharedPreferences =

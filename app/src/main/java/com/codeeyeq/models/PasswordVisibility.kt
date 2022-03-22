@@ -1,9 +1,10 @@
-package com.codeeyeq
+package com.codeeyeq.models
 
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.widget.EditText
 import android.widget.ImageView
+import com.codeeyeq.R
 
 class PasswordVisibility(
     private val box: EditText,

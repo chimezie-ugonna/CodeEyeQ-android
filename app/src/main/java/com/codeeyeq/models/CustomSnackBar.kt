@@ -1,4 +1,4 @@
-package com.codeeyeq
+package com.codeeyeq.models
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
+import com.codeeyeq.R
 import com.google.android.material.snackbar.Snackbar
 
 class CustomSnackBar(

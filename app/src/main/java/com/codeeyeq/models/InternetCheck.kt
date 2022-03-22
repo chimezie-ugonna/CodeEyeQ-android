@@ -1,9 +1,10 @@
-package com.codeeyeq
+package com.codeeyeq.models
 
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.view.View
+import com.codeeyeq.R
 
 class InternetCheck(private val context: Context, val parent: View) {
     fun status(): Boolean {

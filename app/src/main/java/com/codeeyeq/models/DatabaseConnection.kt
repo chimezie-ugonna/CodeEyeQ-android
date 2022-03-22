@@ -1,10 +1,11 @@
-package com.codeeyeq
+package com.codeeyeq.models
 
 import android.content.Context
 import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.codeeyeq.R
 import com.codeeyeq.activities.GetStarted
 import com.codeeyeq.activities.LogIn
 import org.json.JSONException

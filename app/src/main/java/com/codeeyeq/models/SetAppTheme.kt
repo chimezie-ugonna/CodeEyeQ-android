@@ -1,8 +1,9 @@
-package com.codeeyeq
+package com.codeeyeq.models
 
 import android.content.Context
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatDelegate
+import com.codeeyeq.R
 
 class SetAppTheme(private val context: Context) {
     fun set() {

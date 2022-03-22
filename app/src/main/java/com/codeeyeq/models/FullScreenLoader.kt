@@ -1,4 +1,4 @@
-package com.codeeyeq
+package com.codeeyeq.models
 
 import android.animation.Animator
 import android.animation.ObjectAnimator
@@ -14,6 +14,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.PopupWindow
 import android.widget.RelativeLayout
+import com.codeeyeq.R
 
 @SuppressLint("InflateParams")
 class FullScreenLoader(var context: Context) : Animator.AnimatorListener {

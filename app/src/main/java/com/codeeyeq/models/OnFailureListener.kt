@@ -1,7 +1,8 @@
-package com.codeeyeq
+package com.codeeyeq.models
 
 import android.content.Context
 import android.view.View
+import com.codeeyeq.R
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.firebase.auth.FirebaseAuthException
 
