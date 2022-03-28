@@ -19,7 +19,7 @@ import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.codeeyeq.*
+import com.codeeyeq.R
 import com.codeeyeq.models.*
 import com.google.android.gms.auth.api.signin.*
 import com.google.android.gms.common.api.ApiException
@@ -59,10 +59,8 @@ class LogIn : AppCompatActivity() {
                         Firebase.auth.signInWithCredential(credential)
                             .addOnCompleteListener(this) { task ->
                                 if (task.isSuccessful) {
-                                    join(
-                                        Firebase.auth.currentUser?.uid,
-                                        Firebase.auth.currentUser?.displayName,
-                                        Firebase.auth.currentUser?.email,
+                                    logIn(
+                                        Firebase.auth.currentUser?.uid
                                     )
                                 }
                             }.addOnFailureListener(
@@ -304,10 +302,8 @@ class LogIn : AppCompatActivity() {
                     )
                         .addOnCompleteListener(this) { task ->
                             if (task.isSuccessful) {
-                                join(
-                                    Firebase.auth.currentUser?.uid,
-                                    "",
-                                    Firebase.auth.currentUser?.email,
+                                logIn(
+                                    Firebase.auth.currentUser?.uid
                                 )
                             }
                         }.addOnFailureListener(
@@ -396,17 +392,13 @@ class LogIn : AppCompatActivity() {
         }
     }
 
-    private fun join(
-        user_id: String?,
-        fullName: String?,
-        email: String?
+    private fun logIn(
+        user_id: String?
     ) {
         FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
             if (task.isSuccessful) {
-                DatabaseConnection(this).join(
+                DatabaseConnection(this).logIn(
                     user_id.toString(),
-                    fullName.toString(),
-                    email.toString(),
                     task.result,
                     Build.BRAND,
                     Build.MODEL
@@ -421,7 +413,7 @@ class LogIn : AppCompatActivity() {
         )
     }
 
-    fun joined(l: Int) {
+    fun loggedIn(l: Int) {
         if (l == 1) {
             startActivity(Intent(this, Home::class.java))
             finish()

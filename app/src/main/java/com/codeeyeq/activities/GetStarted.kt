@@ -19,7 +19,7 @@ import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.codeeyeq.*
+import com.codeeyeq.R
 import com.codeeyeq.models.*
 import com.google.android.gms.auth.api.signin.*
 import com.google.android.gms.common.api.ApiException
@@ -64,7 +64,7 @@ class GetStarted : AppCompatActivity() {
                         Firebase.auth.signInWithCredential(credential)
                             .addOnCompleteListener(this) { task ->
                                 if (task.isSuccessful) {
-                                    join(
+                                    createAccount(
                                         Firebase.auth.currentUser?.uid,
                                         Firebase.auth.currentUser?.displayName,
                                         Firebase.auth.currentUser?.email
@@ -336,7 +336,7 @@ class GetStarted : AppCompatActivity() {
                     )
                         .addOnCompleteListener(this) { task ->
                             if (task.isSuccessful) {
-                                join(
+                                createAccount(
                                     Firebase.auth.currentUser?.uid,
                                     fullName.text.toString(),
                                     Firebase.auth.currentUser?.email,
@@ -463,14 +463,14 @@ class GetStarted : AppCompatActivity() {
         }
     }
 
-    private fun join(
+    private fun createAccount(
         user_id: String?,
         fullName: String?,
         email: String?
     ) {
         FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
             if (task.isSuccessful) {
-                DatabaseConnection(this).join(
+                DatabaseConnection(this).createAccount(
                     user_id.toString(),
                     fullName.toString(),
                     email.toString(),
@@ -488,7 +488,7 @@ class GetStarted : AppCompatActivity() {
         )
     }
 
-    fun joined(l: Int) {
+    fun created(l: Int) {
         if (l == 1) {
             startActivity(Intent(this, Home::class.java))
             finish()
