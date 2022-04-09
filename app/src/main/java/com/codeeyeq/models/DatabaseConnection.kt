@@ -31,22 +31,30 @@ class DatabaseConnection(var context: Context) {
                 if (response == "Success") {
                     if (context is GetStarted) {
                         (context as GetStarted).created(1)
+                    } else if (context is LogIn) {
+                        (context as LogIn).loggedIn(1)
                     }
                 } else {
                     if (context is GetStarted) {
                         (context as GetStarted).created(-1)
+                    } else if (context is LogIn) {
+                        (context as LogIn).loggedIn(-1)
                     }
                 }
             } catch (e: JSONException) {
                 e.printStackTrace()
                 if (context is GetStarted) {
                     (context as GetStarted).created(-1)
+                } else if (context is LogIn) {
+                    (context as LogIn).loggedIn(-1)
                 }
             }
         }, Response.ErrorListener { error ->
             error.printStackTrace()
             if (context is GetStarted) {
                 (context as GetStarted).created(-1)
+            } else if (context is LogIn) {
+                (context as LogIn).loggedIn(-1)
             }
         }
         ) {

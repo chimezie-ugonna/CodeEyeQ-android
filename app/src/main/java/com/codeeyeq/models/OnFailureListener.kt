@@ -3,13 +3,26 @@ package com.codeeyeq.models
 import android.content.Context
 import android.view.View
 import com.codeeyeq.R
+import com.codeeyeq.activities.GetStarted
+import com.codeeyeq.activities.LogIn
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.firebase.auth.FirebaseAuthException
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class OnFailureListener(val context: Context, val parent: View, private val fsl: FullScreenLoader) :
     OnFailureListener {
     override fun onFailure(p0: Exception) {
         p0.printStackTrace()
+        if (context is GetStarted) {
+            context.gsc.signOut().addOnCompleteListener(context) {
+                Firebase.auth.signOut()
+            }
+        } else if (context is LogIn) {
+            context.gsc.signOut().addOnCompleteListener(context) {
+                Firebase.auth.signOut()
+            }
+        }
         fsl.hide()
         if (p0 is FirebaseAuthException) {
             when (p0.errorCode) {

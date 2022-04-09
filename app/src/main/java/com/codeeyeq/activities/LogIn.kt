@@ -39,7 +39,7 @@ class LogIn : AppCompatActivity() {
     private lateinit var passwordVisibility: ImageView
     private var passwordFieldState: String = "normal"
     private lateinit var gso: GoogleSignInOptions
-    private lateinit var gsc: GoogleSignInClient
+    lateinit var gsc: GoogleSignInClient
     private var requestCode: Int = 0
     private lateinit var account: GoogleSignInAccount
     private lateinit var fsl: FullScreenLoader
@@ -60,7 +60,9 @@ class LogIn : AppCompatActivity() {
                             .addOnCompleteListener(this) { task ->
                                 if (task.isSuccessful) {
                                     logIn(
-                                        Firebase.auth.currentUser?.uid
+                                        Firebase.auth.currentUser?.uid,
+                                        Firebase.auth.currentUser?.displayName,
+                                        Firebase.auth.currentUser?.email
                                     )
                                 }
                             }.addOnFailureListener(
@@ -303,7 +305,7 @@ class LogIn : AppCompatActivity() {
                         .addOnCompleteListener(this) { task ->
                             if (task.isSuccessful) {
                                 logIn(
-                                    Firebase.auth.currentUser?.uid
+                                    Firebase.auth.currentUser?.uid, "", ""
                                 )
                             }
                         }.addOnFailureListener(
@@ -392,17 +394,26 @@ class LogIn : AppCompatActivity() {
         }
     }
 
-    private fun logIn(
-        user_id: String?
-    ) {
+    private fun logIn(user_id: String?, fullName: String?, email: String?) {
         FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
             if (task.isSuccessful) {
-                DatabaseConnection(this).logIn(
-                    user_id.toString(),
-                    task.result,
-                    Build.BRAND,
-                    Build.MODEL
-                )
+                if (fullName != "" && email != "") {
+                    DatabaseConnection(this).createAccount(
+                        user_id.toString(),
+                        fullName.toString(),
+                        email.toString(),
+                        task.result,
+                        Build.BRAND,
+                        Build.MODEL
+                    )
+                } else {
+                    DatabaseConnection(this).logIn(
+                        user_id.toString(),
+                        task.result,
+                        Build.BRAND,
+                        Build.MODEL
+                    )
+                }
             }
         }.addOnFailureListener(
             OnFailureListener(

@@ -43,7 +43,7 @@ class GetStarted : AppCompatActivity() {
     private lateinit var passwordVisibility: ImageView
     private var passwordFieldState: String = "normal"
     private lateinit var gso: GoogleSignInOptions
-    private lateinit var gsc: GoogleSignInClient
+    lateinit var gsc: GoogleSignInClient
     private var requestCode: Int = 0
     private lateinit var account: GoogleSignInAccount
     private lateinit var fsl: FullScreenLoader

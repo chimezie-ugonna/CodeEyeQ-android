@@ -19,6 +19,8 @@ import androidx.core.content.ContextCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.codeeyeq.R
 import com.codeeyeq.models.SetAppTheme
+import com.google.android.gms.common.ConnectionResult
+import com.google.android.gms.common.GoogleApiAvailability
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
@@ -95,6 +97,17 @@ class MainActivity : AppCompatActivity() {
         }
 
         Handler(Looper.getMainLooper()).postDelayed({ change1() }, 3000)
+
+        if (!isGooglePlayServicesAvailable()) {
+            GoogleApiAvailability.getInstance().makeGooglePlayServicesAvailable(this)
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (!isGooglePlayServicesAvailable()) {
+            GoogleApiAvailability.getInstance().makeGooglePlayServicesAvailable(this)
+        }
     }
 
     override fun onStart() {
@@ -181,6 +194,11 @@ class MainActivity : AppCompatActivity() {
         descriptionSwitcher.setText(descriptions[0])
 
         Handler(Looper.getMainLooper()).postDelayed({ change1() }, 3000)
+    }
+
+    private fun isGooglePlayServicesAvailable(): Boolean {
+        return GoogleApiAvailability.getInstance()
+            .isGooglePlayServicesAvailable(this) == ConnectionResult.SUCCESS
     }
 
     private fun getColorResCompat(id: Int): Int {
