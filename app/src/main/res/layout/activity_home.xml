@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/parent"
     android:layout_width="match_parent"
@@ -7,14 +7,182 @@
     android:background="?attr/white_black"
     tools:context=".activities.Home">
 
-    <TextView
-        android:id="@+id/log_out"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+    <LinearLayout
+        android:id="@+id/home_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/white_black"
         android:gravity="center"
-        android:text="@string/log_out"
-        android:textColor="?attr/blue_white"
-        android:textSize="@dimen/big" />
+        android:orientation="vertical">
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/log_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding"
+            android:gravity="center"
+            android:text="@string/log_out"
+            android:textColor="?attr/blue_white"
+            android:textSize="@dimen/big" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/learn_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/white_black"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/interact_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/white_black"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/board_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/white_black"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_margin="@dimen/padding"
+        android:background="@drawable/blue_white_solid_big_radius"
+        android:baselineAligned="false"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/big">
+
+        <FrameLayout
+            android:id="@+id/home_icon_parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:hapticFeedbackEnabled="true">
+
+            <ImageView
+                android:id="@+id/home_icon"
+                android:layout_width="@dimen/icons"
+                android:layout_height="@dimen/icons"
+                android:layout_gravity="center"
+                android:contentDescription="@string/empty"
+                android:src="@drawable/home" />
+
+            <TextView
+                android:id="@+id/home_dot"
+                android:layout_width="@dimen/padding"
+                android:layout_height="@dimen/padding"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/padding"
+                android:layout_marginBottom="@dimen/padding"
+                android:background="@drawable/notification_dot"
+                android:textSize="@dimen/large"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/learn_icon_parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:hapticFeedbackEnabled="true">
+
+            <ImageView
+                android:id="@+id/learn_icon"
+                android:layout_width="@dimen/icons"
+                android:layout_height="@dimen/icons"
+                android:layout_gravity="center"
+                android:contentDescription="@string/empty"
+                android:src="@drawable/learn_outline" />
+
+            <TextView
+                android:id="@+id/learn_dot"
+                android:layout_width="@dimen/padding"
+                android:layout_height="@dimen/padding"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/padding"
+                android:layout_marginBottom="@dimen/padding"
+                android:background="@drawable/notification_dot"
+                android:textSize="@dimen/large"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/interact_icon_parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:hapticFeedbackEnabled="true">
+
+            <ImageView
+                android:id="@+id/interact_icon"
+                android:layout_width="@dimen/icons"
+                android:layout_height="@dimen/icons"
+                android:layout_gravity="center"
+                android:contentDescription="@string/empty"
+                android:src="@drawable/interact_outline" />
+
+            <TextView
+                android:id="@+id/interact_dot"
+                android:layout_width="@dimen/padding"
+                android:layout_height="@dimen/padding"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/padding"
+                android:layout_marginBottom="@dimen/padding"
+                android:background="@drawable/notification_dot"
+                android:textSize="@dimen/large" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/board_icon_parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:hapticFeedbackEnabled="true">
+
+            <ImageView
+                android:id="@+id/board_icon"
+                android:layout_width="@dimen/icons"
+                android:layout_height="@dimen/icons"
+                android:layout_gravity="center"
+                android:contentDescription="@string/empty"
+                android:src="@drawable/board_outline" />
+
+            <TextView
+                android:id="@+id/board_dot"
+                android:layout_width="@dimen/padding"
+                android:layout_height="@dimen/padding"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/padding"
+                android:layout_marginBottom="@dimen/padding"
+                android:background="@drawable/notification_dot"
+                android:textSize="@dimen/large"
+                android:visibility="gone" />
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+</FrameLayout>
