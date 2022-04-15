@@ -12,6 +12,7 @@
     <dimen name="big_radius">10sp</dimen>
     <dimen name="radius">5sp</dimen>
     <dimen name="half_radius">2.5sp</dimen>
+    <dimen name="thin_plus">1.5sp</dimen>
     <dimen name="thin">1sp</dimen>
     <dimen name="icons">30sp</dimen>
     <dimen name="smaller_icons">25sp</dimen>

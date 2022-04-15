@@ -151,7 +151,8 @@
                 android:layout_marginStart="@dimen/padding"
                 android:layout_marginBottom="@dimen/padding"
                 android:background="@drawable/notification_dot"
-                android:textSize="@dimen/large" />
+                android:textSize="@dimen/large"
+                android:visibility="gone" />
         </FrameLayout>
 
         <FrameLayout
