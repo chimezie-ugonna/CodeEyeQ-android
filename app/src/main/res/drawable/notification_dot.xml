@@ -6,5 +6,5 @@
 
     <stroke
         android:width="@dimen/thin_plus"
-        android:color="?attr/white" />
+        android:color="?attr/white_black" />
 </shape>
