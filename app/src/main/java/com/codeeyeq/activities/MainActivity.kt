@@ -16,7 +16,6 @@ import android.widget.TextSwitcher
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.codeeyeq.R
 import com.codeeyeq.models.SetAppTheme
 import com.google.android.gms.common.ConnectionResult
@@ -37,7 +36,6 @@ class MainActivity : AppCompatActivity() {
     private var descriptions = ArrayList<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        installSplashScreen()
         SetAppTheme(this).set()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

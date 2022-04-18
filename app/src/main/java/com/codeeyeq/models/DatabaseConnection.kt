@@ -27,8 +27,8 @@ class DatabaseConnection(var context: Context) {
         val request = object : StringRequest(Method.POST, "${url}create_account", { r ->
             try {
                 val jsonObject = JSONObject(r)
-                val response = jsonObject.getString("response")
-                if (response == "Success") {
+                val status = jsonObject.getInt("status")
+                if (status in 200..299) {
                     if (context is GetStarted) {
                         (context as GetStarted).created(1)
                     } else if (context is LogIn) {
@@ -83,8 +83,8 @@ class DatabaseConnection(var context: Context) {
         val request = object : StringRequest(Method.POST, "${url}log_in", { r ->
             try {
                 val jsonObject = JSONObject(r)
-                val response = jsonObject.getString("response")
-                if (response == "Success") {
+                val status = jsonObject.getInt("status")
+                if (status in 200..299) {
                     if (context is LogIn) {
                         (context as LogIn).loggedIn(1)
                     }
@@ -126,8 +126,8 @@ class DatabaseConnection(var context: Context) {
         val request = object : StringRequest(Method.GET, "${url}log_out?user_id=${user_id}", { r ->
             try {
                 val jsonObject = JSONObject(r)
-                val response = jsonObject.getString("response")
-                if (response == "Success") {
+                val status = jsonObject.getInt("status")
+                if (status in 200..299) {
                     if (context is Home) {
                         (context as Home).loggedOut(1)
                     }

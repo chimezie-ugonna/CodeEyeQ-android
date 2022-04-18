@@ -30,6 +30,8 @@
         <entry key="app/src/main/res/drawable/home_outline.xml" value="0.2055" />
         <entry key="app/src/main/res/drawable/home_outline_20.xml" value="0.2055" />
         <entry key="app/src/main/res/drawable/home_outline_24.xml" value="0.2055" />
+        <entry key="app/src/main/res/drawable/house_chimney.xml" value="0.2055" />
+        <entry key="app/src/main/res/drawable/house_fill.xml" value="0.2055" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/interact.xml" value="0.2055" />
         <entry key="app/src/main/res/drawable/interact_outline.xml" value="0.2055" />
@@ -62,6 +64,8 @@
         <entry key="app/src/main/res/drawable/solid.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/solid_2.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/solid_dark.xml" value="0.1795" />
+        <entry key="app/src/main/res/drawable/splash_screen.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/splash_screen_gradient.xml" value="0.2055" />
         <entry key="app/src/main/res/drawable/stroke.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/stroke_dark.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/success_green_solid.xml" value="0.165" />
