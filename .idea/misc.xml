@@ -18,8 +18,11 @@
         <entry key="app/src/main/res/drawable/account_circle_success.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/app_icon_foreground 2.xml" value="0.1645" />
         <entry key="app/src/main/res/drawable/app_icon_foreground.xml" value="0.1795" />
+        <entry key="app/src/main/res/drawable/app_icon_splash_screen.xml" value="0.1295" />
+        <entry key="app/src/main/res/drawable/apple_logo.xml" value="0.2055" />
         <entry key="app/src/main/res/drawable/back.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/background_image.xml" value="0.1795" />
+        <entry key="app/src/main/res/drawable/black_white_solid_grey_stroke.xml" value="0.2055" />
         <entry key="app/src/main/res/drawable/blue_white_solid.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/blue_white_solid_big_radius.xml" value="0.2055" />
         <entry key="app/src/main/res/drawable/blue_white_solid_bigger_radius.xml" value="0.2055" />
@@ -50,6 +53,8 @@
         <entry key="app/src/main/res/drawable/mail_outline_error.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/mail_outline_normal.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/mail_outline_success.xml" value="0.1795" />
+        <entry key="app/src/main/res/drawable/more.xml" value="0.2055" />
+        <entry key="app/src/main/res/drawable/more_outline.xml" value="0.2055" />
         <entry key="app/src/main/res/drawable/notification_dot.xml" value="0.2055" />
         <entry key="app/src/main/res/drawable/snow_grey_stroke_solid.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/snow_night_blue_stroke_solid.xml" value="0.1795" />
@@ -68,6 +73,7 @@
         <entry key="app/src/main/res/drawable/splash_screen_gradient.xml" value="0.2055" />
         <entry key="app/src/main/res/drawable/stroke.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/stroke_dark.xml" value="0.1795" />
+        <entry key="app/src/main/res/drawable/subtract3x.xml" value="0.2055" />
         <entry key="app/src/main/res/drawable/success_green_solid.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/tinted_black_white_solid.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/tinted_blue_white_solid.xml" value="0.1795" />
@@ -82,6 +88,7 @@
         <entry key="app/src/main/res/drawable/white_grey_stroke.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/white_grey_stroke_solid.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/white_solid_border_grey_stroke.xml" value="0.1795" />
+        <entry key="app/src/main/res/drawable/white_solid_grey_stroke.xml" value="0.2055" />
         <entry key="app/src/main/res/layout/activity_full_screen_loader.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_get_started.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.55" />
@@ -96,6 +103,7 @@
         <entry key="app/src/main/res/mipmap-anydpi-v26/account_circle_night.xml" value="0.1795" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/app_icon.xml" value="0.1795" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/app_icon_round.xml" value="0.165" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/app_splash_screen.xml" value="0.165" />
         <entry key="app/src/main/res/mipmap-night/account_circle.xml" value="0.165" />
       </map>
     </option>

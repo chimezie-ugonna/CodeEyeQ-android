@@ -24,9 +24,11 @@ import com.codeeyeq.models.*
 import com.google.android.gms.auth.api.signin.*
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.auth.OAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.messaging.FirebaseMessaging
+import java.util.*
 
 class GetStarted : AppCompatActivity() {
     private lateinit var fullName: EditText
@@ -44,6 +46,7 @@ class GetStarted : AppCompatActivity() {
     private var passwordFieldState: String = "normal"
     private lateinit var gso: GoogleSignInOptions
     lateinit var gsc: GoogleSignInClient
+    private lateinit var provider: OAuthProvider.Builder
     private var requestCode: Int = 0
     private lateinit var account: GoogleSignInAccount
     private lateinit var fsl: FullScreenLoader
@@ -311,6 +314,44 @@ class GetStarted : AppCompatActivity() {
         gsc = GoogleSignIn.getClient(this, gso)
 
         findViewById<RelativeLayout>(R.id.back_con).setOnClickListener { finish() }
+        findViewById<RelativeLayout>(R.id.appleSignUp).setOnClickListener {
+            fsl.show()
+            provider = OAuthProvider.newBuilder("apple.com")
+            provider.scopes = arrayOf("email", "name").toMutableList()
+            provider.addCustomParameter("locale", Locale.getDefault().language)
+            val pending = Firebase.auth.pendingAuthResult
+            if (pending != null) {
+                pending.addOnSuccessListener {
+                    createAccount(
+                        it.user?.uid,
+                        it.user?.displayName,
+                        it.user?.email
+                    )
+                }.addOnFailureListener(
+                    OnFailureListener(
+                        this,
+                        findViewById(R.id.parent),
+                        fsl
+                    )
+                )
+            } else {
+                Firebase.auth.startActivityForSignInWithProvider(this, provider.build())
+                    .addOnSuccessListener {
+                        createAccount(
+                            it.user?.uid,
+                            it.user?.displayName,
+                            it.user?.email
+                        )
+                    }
+                    .addOnFailureListener(
+                        OnFailureListener(
+                            this,
+                            findViewById(R.id.parent),
+                            fsl
+                        )
+                    )
+            }
+        }
         findViewById<RelativeLayout>(R.id.googleSignUp).setOnClickListener {
             requestCode = 1
             onActivityResult.launch(gsc.signInIntent)

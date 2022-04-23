@@ -29,8 +29,8 @@
                 android:padding="@dimen/padding">
 
                 <ImageView
-                    android:layout_width="@dimen/smaller_icons"
-                    android:layout_height="@dimen/smaller_icons"
+                    android:layout_width="@dimen/icons"
+                    android:layout_height="@dimen/icons"
                     android:contentDescription="@string/empty"
                     android:src="@drawable/back" />
             </RelativeLayout>
@@ -68,34 +68,51 @@
                     android:textColor="?attr/grey"
                     android:textSize="@dimen/big" />
 
-                <RelativeLayout
-                    android:id="@+id/googleSignIn"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/padding"
-                    android:background="@drawable/white_solid_grey_stroke"
-                    android:gravity="center"
-                    android:padding="@dimen/padding">
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
 
-                    <ImageView
-                        android:id="@+id/google_logo"
-                        android:layout_width="@dimen/icons"
-                        android:layout_height="@dimen/icons"
-                        android:layout_centerVertical="true"
-                        android:contentDescription="@string/empty"
-                        android:src="@drawable/google_logo" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <RelativeLayout
+                        android:id="@+id/appleSignIn"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="@dimen/padding"
-                        android:layout_toEndOf="@+id/google_logo"
+                        android:layout_marginTop="@dimen/padding"
+                        android:layout_marginEnd="@dimen/padding"
+                        android:layout_weight="1"
+                        android:background="@drawable/black_white_solid_grey_stroke"
                         android:gravity="center"
-                        android:text="@string/google_signin"
-                        android:textColor="?attr/black"
-                        android:textSize="@dimen/big" />
-                </RelativeLayout>
+                        android:padding="@dimen/padding">
+
+                        <ImageView
+                            android:id="@+id/apple_logo"
+                            android:layout_width="@dimen/icons"
+                            android:layout_height="@dimen/icons"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@string/empty"
+                            android:src="@drawable/apple_logo" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/googleSignIn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding"
+                        android:layout_weight="1"
+                        android:background="@drawable/white_solid_grey_stroke"
+                        android:gravity="center"
+                        android:padding="@dimen/padding">
+
+                        <ImageView
+                            android:id="@+id/google_logo"
+                            android:layout_width="@dimen/icons"
+                            android:layout_height="@dimen/icons"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@string/empty"
+                            android:src="@drawable/google_logo" />
+                    </RelativeLayout>
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/emailHeader"
@@ -166,8 +183,8 @@
 
                     <ImageView
                         android:id="@+id/passwordVisibility"
-                        android:layout_width="@dimen/smaller_icons"
-                        android:layout_height="@dimen/smaller_icons"
+                        android:layout_width="@dimen/icons"
+                        android:layout_height="@dimen/icons"
                         android:layout_alignTop="@+id/password"
                         android:layout_alignEnd="@+id/password"
                         android:layout_alignBottom="@+id/password"

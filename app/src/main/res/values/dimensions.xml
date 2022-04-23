@@ -15,6 +15,7 @@
     <dimen name="thin_plus">1.5sp</dimen>
     <dimen name="thin">1sp</dimen>
     <dimen name="icons">30sp</dimen>
-    <dimen name="smaller_icons">25sp</dimen>
     <dimen name="loader_image">100sp</dimen>
+    <dimen name="app_icon_splash_screen_width">145sp</dimen>
+    <dimen name="app_icon_splash_screen_height">120sp</dimen>
 </resources>

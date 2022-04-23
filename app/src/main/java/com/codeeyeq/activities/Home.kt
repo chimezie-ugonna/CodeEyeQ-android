@@ -21,20 +21,22 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
+
 class Home : AppCompatActivity() {
     private lateinit var fsl: FullScreenLoader
     private lateinit var homeIcon: ImageView
     private lateinit var learnIcon: ImageView
     private lateinit var interactIcon: ImageView
-    private lateinit var boardIcon: ImageView
+    private lateinit var moreIcon: ImageView
     private lateinit var homeIconParent: FrameLayout
     private lateinit var learnIconParent: FrameLayout
     private lateinit var interactIconParent: FrameLayout
-    private lateinit var boardIconParent: FrameLayout
+    private lateinit var moreIconParent: FrameLayout
     private lateinit var homeLayout: LinearLayout
     private lateinit var learnLayout: LinearLayout
     private lateinit var interactLayout: LinearLayout
-    private lateinit var boardLayout: LinearLayout
+    private lateinit var moreLayout: LinearLayout
+    private lateinit var bottomNavigation: LinearLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         SetAppTheme(this).set()
         super.onCreate(savedInstanceState)
@@ -51,8 +53,8 @@ class Home : AppCompatActivity() {
             learnIcon.setImageResource(R.drawable.learn_outline)
             interactLayout.visibility = View.GONE
             interactIcon.setImageResource(R.drawable.interact_outline)
-            boardLayout.visibility = View.GONE
-            boardIcon.setImageResource(R.drawable.board_outline)
+            moreLayout.visibility = View.GONE
+            moreIcon.setImageResource(R.drawable.more_outline)
 
             it.performHapticFeedback(
                 HapticFeedbackConstants.VIRTUAL_KEY,
@@ -70,8 +72,8 @@ class Home : AppCompatActivity() {
             learnIcon.setImageResource(R.drawable.learn)
             interactLayout.visibility = View.GONE
             interactIcon.setImageResource(R.drawable.interact_outline)
-            boardLayout.visibility = View.GONE
-            boardIcon.setImageResource(R.drawable.board_outline)
+            moreLayout.visibility = View.GONE
+            moreIcon.setImageResource(R.drawable.more_outline)
 
             it.performHapticFeedback(
                 HapticFeedbackConstants.VIRTUAL_KEY,
@@ -89,8 +91,8 @@ class Home : AppCompatActivity() {
             learnIcon.setImageResource(R.drawable.learn_outline)
             interactLayout.visibility = View.VISIBLE
             interactIcon.setImageResource(R.drawable.interact)
-            boardLayout.visibility = View.GONE
-            boardIcon.setImageResource(R.drawable.board_outline)
+            moreLayout.visibility = View.GONE
+            moreIcon.setImageResource(R.drawable.more_outline)
 
             it.performHapticFeedback(
                 HapticFeedbackConstants.VIRTUAL_KEY,
@@ -98,24 +100,26 @@ class Home : AppCompatActivity() {
             )
         }
 
-        boardLayout = findViewById(R.id.board_layout)
-        boardIcon = findViewById(R.id.board_icon)
-        boardIconParent = findViewById(R.id.board_icon_parent)
-        boardIconParent.setOnClickListener {
+        moreLayout = findViewById(R.id.more_layout)
+        moreIcon = findViewById(R.id.more_icon)
+        moreIconParent = findViewById(R.id.more_icon_parent)
+        moreIconParent.setOnClickListener {
             homeLayout.visibility = View.GONE
             homeIcon.setImageResource(R.drawable.home_outline)
             learnLayout.visibility = View.GONE
             learnIcon.setImageResource(R.drawable.learn_outline)
             interactLayout.visibility = View.GONE
             interactIcon.setImageResource(R.drawable.interact_outline)
-            boardLayout.visibility = View.VISIBLE
-            boardIcon.setImageResource(R.drawable.board)
+            moreLayout.visibility = View.VISIBLE
+            moreIcon.setImageResource(R.drawable.more)
 
             it.performHapticFeedback(
                 HapticFeedbackConstants.VIRTUAL_KEY,
                 HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING
             )
         }
+
+        bottomNavigation = findViewById(R.id.bottom_navigation)
 
         findViewById<TextView>(R.id.log_out).setOnClickListener {
             GoogleSignIn.getClient(
@@ -134,6 +138,33 @@ class Home : AppCompatActivity() {
             }
         }
     }
+
+    /*private fun showBottomNavigation() {
+        bottomNavigation.visibility = View.VISIBLE
+        val animate = TranslateAnimation(
+            0f,
+            0f,
+            bottomNavigation.height.toFloat(),
+            0f
+        )
+
+        animate.duration = 500
+        animate.fillAfter = true
+        bottomNavigation.startAnimation(animate)
+    }
+
+    private fun hideBottomNavigation() {
+        val animate = TranslateAnimation(
+            0f,
+            0f,
+            0f,
+            bottomNavigation.height + resources.getDimension(R.dimen.padding)
+        )
+
+        animate.duration = 500
+        animate.fillAfter = true
+        bottomNavigation.startAnimation(animate)
+    }*/
 
     fun loggedOut(l: Int) {
         if (l == 1) {

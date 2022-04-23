@@ -88,6 +88,7 @@
         android:layout_marginEnd="@dimen/padding"
         android:layout_marginBottom="@dimen/padding"
         android:background="@drawable/blue_white_solid"
+        android:gravity="center_vertical"
         android:padding="@dimen/padding">
 
         <ImageView
@@ -114,6 +115,7 @@
         android:layout_marginStart="@dimen/padding"
         android:layout_marginEnd="@dimen/padding"
         android:background="@drawable/tinted_blue_white_solid"
+        android:gravity="center_vertical"
         android:padding="@dimen/padding">
 
         <ImageView

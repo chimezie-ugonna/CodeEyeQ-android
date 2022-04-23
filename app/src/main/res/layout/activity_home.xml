@@ -49,7 +49,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/board_layout"
+        android:id="@+id/more_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="?attr/white_black"
@@ -156,7 +156,7 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/board_icon_parent"
+            android:id="@+id/more_icon_parent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -164,15 +164,15 @@
             android:hapticFeedbackEnabled="true">
 
             <ImageView
-                android:id="@+id/board_icon"
+                android:id="@+id/more_icon"
                 android:layout_width="@dimen/icons"
                 android:layout_height="@dimen/icons"
                 android:layout_gravity="center"
                 android:contentDescription="@string/empty"
-                android:src="@drawable/board_outline" />
+                android:src="@drawable/more_outline" />
 
             <TextView
-                android:id="@+id/board_dot"
+                android:id="@+id/more_dot"
                 android:layout_width="@dimen/padding"
                 android:layout_height="@dimen/padding"
                 android:layout_gravity="center"
