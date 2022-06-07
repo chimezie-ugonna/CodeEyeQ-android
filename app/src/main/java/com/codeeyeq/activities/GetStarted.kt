@@ -3,7 +3,6 @@ package com.codeeyeq.activities
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -19,6 +18,7 @@ import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.android.volley.Request
 import com.codeeyeq.R
 import com.codeeyeq.models.*
 import com.google.android.gms.auth.api.signin.*
@@ -28,6 +28,7 @@ import com.google.firebase.auth.OAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.messaging.FirebaseMessaging
+import org.json.JSONObject
 import java.util.*
 
 class GetStarted : AppCompatActivity() {
@@ -90,7 +91,7 @@ class GetStarted : AppCompatActivity() {
                                 findViewById(R.id.parent),
                                 getString(R.string.SIGN_IN_CANCELLED),
                                 "error"
-                            ).show()
+                            )
                         }
                         GoogleSignInStatusCodes.SIGN_IN_FAILED -> {
                             CustomSnackBar(
@@ -98,7 +99,7 @@ class GetStarted : AppCompatActivity() {
                                 findViewById(R.id.parent),
                                 getString(R.string.SIGN_IN_FAILED),
                                 "error"
-                            ).show()
+                            )
                         }
                         GoogleSignInStatusCodes.SIGN_IN_CURRENTLY_IN_PROGRESS -> {
                             CustomSnackBar(
@@ -106,7 +107,7 @@ class GetStarted : AppCompatActivity() {
                                 findViewById(R.id.parent),
                                 getString(R.string.SIGN_IN_CURRENTLY_IN_PROGRESS),
                                 "error"
-                            ).show()
+                            )
                         }
                     }
                 }
@@ -117,12 +118,12 @@ class GetStarted : AppCompatActivity() {
                 findViewById(R.id.parent),
                 getString(R.string.SIGN_IN_FAILED),
                 "error"
-            ).show()
+            )
         }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        SetAppTheme(this).set()
+        SetAppTheme(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_get_started)
 
@@ -304,7 +305,7 @@ class GetStarted : AppCompatActivity() {
             PasswordVisibility(
                 password, passwordVisibility,
                 passwordVisibility.tag as String, passwordFieldState
-            ).change()
+            )
         }
 
         gso =
@@ -511,13 +512,15 @@ class GetStarted : AppCompatActivity() {
     ) {
         FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
             if (task.isSuccessful) {
-                DatabaseConnection(this).createAccount(
-                    user_id.toString(),
-                    fullName.toString(),
-                    email.toString(),
-                    task.result,
-                    Build.BRAND,
-                    Build.MODEL
+                Session(this).deviceToken(task.result)
+                ServerConnection(
+                    this, "createAccount", Request.Method.POST, "users/create",
+                    JSONObject().put("user_id", user_id.toString())
+                        .put(
+                            "full_name",
+                            if (fullName.toString() != "null") fullName.toString() else ""
+                        )
+                        .put("email", email.toString())
                 )
             }
         }.addOnFailureListener(
@@ -543,7 +546,7 @@ class GetStarted : AppCompatActivity() {
                 findViewById(R.id.parent),
                 getString(R.string.server_error_message),
                 "error"
-            ).show()
+            )
         }
         Handler(Looper.getMainLooper()).postDelayed({ fsl.hide() }, 1000)
     }

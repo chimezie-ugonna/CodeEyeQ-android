@@ -14,31 +14,33 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.android.volley.Request
 import com.codeeyeq.R
 import com.codeeyeq.models.*
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import org.json.JSONObject
 
 
 class Home : AppCompatActivity() {
     private lateinit var fsl: FullScreenLoader
     private lateinit var homeIcon: ImageView
     private lateinit var learnIcon: ImageView
-    private lateinit var interactIcon: ImageView
+    private lateinit var collaborateIcon: ImageView
     private lateinit var moreIcon: ImageView
     private lateinit var homeIconParent: FrameLayout
     private lateinit var learnIconParent: FrameLayout
-    private lateinit var interactIconParent: FrameLayout
+    private lateinit var collaborateIconParent: FrameLayout
     private lateinit var moreIconParent: FrameLayout
     private lateinit var homeLayout: LinearLayout
     private lateinit var learnLayout: LinearLayout
-    private lateinit var interactLayout: LinearLayout
+    private lateinit var collaborateLayout: LinearLayout
     private lateinit var moreLayout: LinearLayout
     private lateinit var bottomNavigation: LinearLayout
     override fun onCreate(savedInstanceState: Bundle?) {
-        SetAppTheme(this).set()
+        SetAppTheme(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         fsl = FullScreenLoader(this)
@@ -51,8 +53,8 @@ class Home : AppCompatActivity() {
             homeIcon.setImageResource(R.drawable.home)
             learnLayout.visibility = View.GONE
             learnIcon.setImageResource(R.drawable.learn_outline)
-            interactLayout.visibility = View.GONE
-            interactIcon.setImageResource(R.drawable.interact_outline)
+            collaborateLayout.visibility = View.GONE
+            collaborateIcon.setImageResource(R.drawable.collaborate_outline)
             moreLayout.visibility = View.GONE
             moreIcon.setImageResource(R.drawable.more_outline)
 
@@ -70,8 +72,8 @@ class Home : AppCompatActivity() {
             homeIcon.setImageResource(R.drawable.home_outline)
             learnLayout.visibility = View.VISIBLE
             learnIcon.setImageResource(R.drawable.learn)
-            interactLayout.visibility = View.GONE
-            interactIcon.setImageResource(R.drawable.interact_outline)
+            collaborateLayout.visibility = View.GONE
+            collaborateIcon.setImageResource(R.drawable.collaborate_outline)
             moreLayout.visibility = View.GONE
             moreIcon.setImageResource(R.drawable.more_outline)
 
@@ -81,16 +83,16 @@ class Home : AppCompatActivity() {
             )
         }
 
-        interactLayout = findViewById(R.id.interact_layout)
-        interactIcon = findViewById(R.id.interact_icon)
-        interactIconParent = findViewById(R.id.interact_icon_parent)
-        interactIconParent.setOnClickListener {
+        collaborateLayout = findViewById(R.id.collaborate_layout)
+        collaborateIcon = findViewById(R.id.collaborate_icon)
+        collaborateIconParent = findViewById(R.id.collaborate_icon_parent)
+        collaborateIconParent.setOnClickListener {
             homeLayout.visibility = View.GONE
             homeIcon.setImageResource(R.drawable.home_outline)
             learnLayout.visibility = View.GONE
             learnIcon.setImageResource(R.drawable.learn_outline)
-            interactLayout.visibility = View.VISIBLE
-            interactIcon.setImageResource(R.drawable.interact)
+            collaborateLayout.visibility = View.VISIBLE
+            collaborateIcon.setImageResource(R.drawable.collaborate)
             moreLayout.visibility = View.GONE
             moreIcon.setImageResource(R.drawable.more_outline)
 
@@ -108,8 +110,8 @@ class Home : AppCompatActivity() {
             homeIcon.setImageResource(R.drawable.home_outline)
             learnLayout.visibility = View.GONE
             learnIcon.setImageResource(R.drawable.learn_outline)
-            interactLayout.visibility = View.GONE
-            interactIcon.setImageResource(R.drawable.interact_outline)
+            collaborateLayout.visibility = View.GONE
+            collaborateIcon.setImageResource(R.drawable.collaborate_outline)
             moreLayout.visibility = View.VISIBLE
             moreIcon.setImageResource(R.drawable.more)
 
@@ -131,8 +133,12 @@ class Home : AppCompatActivity() {
                 hideKeyboard()
                 if (InternetCheck(this, findViewById(R.id.parent)).status()) {
                     fsl.show()
-                    DatabaseConnection(this).logOut(
-                        Firebase.auth.currentUser?.uid.toString()
+                    ServerConnection(
+                        this,
+                        "logOut",
+                        Request.Method.DELETE,
+                        "logins/delete",
+                        JSONObject()
                     )
                 }
             }
@@ -177,7 +183,7 @@ class Home : AppCompatActivity() {
                 findViewById(R.id.parent),
                 getString(R.string.server_error_message),
                 "error"
-            ).show()
+            )
         }
         Handler(Looper.getMainLooper()).postDelayed({ fsl.hide() }, 1000)
     }

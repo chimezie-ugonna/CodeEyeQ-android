@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "45557246868",
+    "project_id": "codeeyeq",
+    "storage_bucket": "codeeyeq.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:45557246868:android:0e43b3e8ee802e0e703d81",
+        "android_client_info": {
+          "package_name": "com.codeeyeq"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "45557246868-uqbb0kjhq5r4qt6crrm7h91srt13cdae.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codeeyeq",
+            "certificate_hash": "e5fbb32e68cc78a9a227ae43c0b3eb5d38e79384"
+          }
+        },
+        {
+          "client_id": "45557246868-v540tv2l2n0qlqdo7ll3bbbp77pqv5a1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYkIKWiYoN3bFTwsEcbtpQGo4dpiWQp20"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "45557246868-8qh72u4bmkopv6b632kgb85rahcd40d3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "45557246868-u3rr6m3v0fdh9lpiippi7qrt0dsg181e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.macco.CodeEyeQ"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

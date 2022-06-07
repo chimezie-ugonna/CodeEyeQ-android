@@ -2,19 +2,17 @@
 <resources>
     <string name="log_in">Iniciar sesión</string>
     <string name="get_started">Empezar</string>
-    <string name="onboarding_title_1">Aprende a codificar</string>
-    <string name="onboarding_title_2">Depurar y probar</string>
-    <string name="onboarding_title_3">Aprendizaje entre pares</string>
-    <string name="onboarding_description_1">Obtenga las habilidades que necesita para crear aplicaciones, sitios web y programas.</string>
-    <string name="onboarding_description_2">Responda todos los cuestionarios que se le den para dominar el arte de la codificación.</string>
-    <string name="onboarding_description_3">Construya su comunidad de codificación mientras aprende con sus compañeros.</string>
+    <string name="on_boarding_title_1">Aprende a codificar</string>
+    <string name="on_boarding_title_2">Depurar y probar</string>
+    <string name="on_boarding_title_3">Aprendizaje entre pares</string>
+    <string name="on_boarding_description_1">Obtenga las habilidades que necesita para crear aplicaciones, sitios web y programas.</string>
+    <string name="on_boarding_description_2">Responda todos los cuestionarios que se le den para dominar el arte de la codificación.</string>
+    <string name="on_boarding_description_3">Construya su comunidad de codificación mientras aprende con sus compañeros.</string>
     <string name="create_account">crear una cuenta</string>
     <string name="full_name">nombre completo</string>
     <string name="email">Email</string>
     <string name="password">clave</string>
     <string name="forgot_password">Has olvidado tu contraseña</string>
-    <string name="google_signin">Inicia sesión con Google</string>
-    <string name="google_signup">Regístrese con Google</string>
     <string name="create_an_account_with_one_of_the_following_options">Crea una cuenta con una de las siguientes opciones.</string>
     <string name="log_in_with_one_of_the_following_options">Inicie sesión con una de las siguientes opciones.</string>
     <string name="login">acceso</string>
@@ -39,4 +37,14 @@
     <string name="server_error_message">La operación falló porque ocurrió un error del servidor.</string>
     <string name="password_link_sent">Enlace de restablecimiento de contraseña enviado.</string>
     <string name="no_internet">No hay conexión a Internet.</string>
+    <string name="go_back">Regresa</string>
+    <string name="sign_up_with_apple">Regístrese con Apple.</string>
+    <string name="sign_up_with_google">Regístrese con google.</string>
+    <string name="sign_in_with_apple">Inicia sesión con Apple.</string>
+    <string name="sign_in_with_google">Inicia sesión con Google.</string>
+    <string name="password_visibility_show_and_hide_password">Visibilidad de contraseña, mostrar y ocultar contraseña.</string>
+    <string name="home_icon_go_to_home_page">Icono de inicio, ir a la página de inicio.</string>
+    <string name="learn_icon_go_to_learn_page">Ícono de aprendizaje, vaya a la página de aprendizaje.</string>
+    <string name="collaborate_icon_go_to_collaborate_page">Ícono de colaboración, vaya a la página de colaboración.</string>
+    <string name="more_icon_go_to_more_page">Más icono, ir a más página.</string>
 </resources>

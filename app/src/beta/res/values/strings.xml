@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name" translatable="false">CodeEyeQ Beta</string>
+    <string name="server_url" translatable="false">https://codeeyeq-beta.herokuapp.com/api/v1/</string>
+    <string name="web_client_id" translatable="false">650453715365-7k3kqcvlp8tbllievbodkop1htoo4ghu.apps.googleusercontent.com</string>
+</resources>

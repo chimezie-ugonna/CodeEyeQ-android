@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/parent"
     android:layout_width="match_parent"
@@ -31,7 +31,7 @@
                 <ImageView
                     android:layout_width="@dimen/icons"
                     android:layout_height="@dimen/icons"
-                    android:contentDescription="@string/empty"
+                    android:contentDescription="@string/go_back"
                     android:src="@drawable/back" />
             </RelativeLayout>
 
@@ -90,7 +90,7 @@
                             android:layout_width="@dimen/icons"
                             android:layout_height="@dimen/icons"
                             android:layout_centerVertical="true"
-                            android:contentDescription="@string/empty"
+                            android:contentDescription="@string/sign_up_with_apple"
                             android:src="@drawable/apple_logo" />
                     </RelativeLayout>
 
@@ -109,7 +109,7 @@
                             android:layout_width="@dimen/icons"
                             android:layout_height="@dimen/icons"
                             android:layout_centerVertical="true"
-                            android:contentDescription="@string/empty"
+                            android:contentDescription="@string/sign_up_with_google"
                             android:src="@drawable/google_logo" />
                     </RelativeLayout>
                 </LinearLayout>
@@ -225,7 +225,7 @@
                         android:layout_alignBottom="@+id/password"
                         android:layout_centerVertical="true"
                         android:layout_marginEnd="@dimen/padding"
-                        android:contentDescription="@string/empty"
+                        android:contentDescription="@string/password_visibility_show_and_hide_password"
                         android:src="@drawable/invisibility_normal" />
                 </RelativeLayout>
 
@@ -261,4 +261,4 @@
         </ScrollView>
 
     </LinearLayout>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</RelativeLayout>

@@ -3,7 +3,6 @@ package com.codeeyeq.activities
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -19,6 +18,7 @@ import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.android.volley.Request
 import com.codeeyeq.R
 import com.codeeyeq.models.*
 import com.google.android.gms.auth.api.signin.*
@@ -28,6 +28,7 @@ import com.google.firebase.auth.OAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.messaging.FirebaseMessaging
+import org.json.JSONObject
 import java.util.*
 
 class LogIn : AppCompatActivity() {
@@ -85,7 +86,7 @@ class LogIn : AppCompatActivity() {
                                 findViewById(R.id.parent),
                                 getString(R.string.SIGN_IN_CANCELLED),
                                 "error"
-                            ).show()
+                            )
                         }
                         GoogleSignInStatusCodes.SIGN_IN_FAILED -> {
                             CustomSnackBar(
@@ -93,7 +94,7 @@ class LogIn : AppCompatActivity() {
                                 findViewById(R.id.parent),
                                 getString(R.string.SIGN_IN_FAILED),
                                 "error"
-                            ).show()
+                            )
                         }
                         GoogleSignInStatusCodes.SIGN_IN_CURRENTLY_IN_PROGRESS -> {
                             CustomSnackBar(
@@ -101,7 +102,7 @@ class LogIn : AppCompatActivity() {
                                 findViewById(R.id.parent),
                                 getString(R.string.SIGN_IN_CURRENTLY_IN_PROGRESS),
                                 "error"
-                            ).show()
+                            )
                         }
                     }
                 }
@@ -112,12 +113,12 @@ class LogIn : AppCompatActivity() {
                 findViewById(R.id.parent),
                 getString(R.string.SIGN_IN_FAILED),
                 "error"
-            ).show()
+            )
         }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        SetAppTheme(this).set()
+        SetAppTheme(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log_in)
 
@@ -245,7 +246,7 @@ class LogIn : AppCompatActivity() {
             PasswordVisibility(
                 password, passwordVisibility,
                 passwordVisibility.tag as String, passwordFieldState
-            ).change()
+            )
         }
 
         gso =
@@ -316,7 +317,7 @@ class LogIn : AppCompatActivity() {
                                     findViewById(R.id.parent),
                                     getString(R.string.password_link_sent),
                                     "success"
-                                ).show()
+                                )
                             }
                         }.addOnFailureListener(
                             OnFailureListener(
@@ -438,21 +439,21 @@ class LogIn : AppCompatActivity() {
     private fun logIn(user_id: String?, fullName: String?, email: String?) {
         FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
             if (task.isSuccessful) {
+                Session(this).deviceToken(task.result)
                 if (fullName != "" && email != "") {
-                    DatabaseConnection(this).createAccount(
-                        user_id.toString(),
-                        fullName.toString(),
-                        email.toString(),
-                        task.result,
-                        Build.BRAND,
-                        Build.MODEL
+                    ServerConnection(
+                        this, "createAccount", Request.Method.POST, "users/create",
+                        JSONObject().put("user_id", user_id.toString())
+                            .put(
+                                "full_name",
+                                if (fullName.toString() != "null") fullName.toString() else ""
+                            )
+                            .put("email", email.toString())
                     )
                 } else {
-                    DatabaseConnection(this).logIn(
-                        user_id.toString(),
-                        task.result,
-                        Build.BRAND,
-                        Build.MODEL
+                    ServerConnection(
+                        this, "logIn", Request.Method.POST, "logins/create",
+                        JSONObject().put("user_id", user_id.toString())
                     )
                 }
             }
@@ -479,7 +480,7 @@ class LogIn : AppCompatActivity() {
                 findViewById(R.id.parent),
                 getString(R.string.server_error_message),
                 "error"
-            ).show()
+            )
         }
         Handler(Looper.getMainLooper()).postDelayed({ fsl.hide() }, 1000)
     }

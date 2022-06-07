@@ -11,17 +11,15 @@ import android.widget.TextView
 import com.codeeyeq.R
 import com.google.android.material.snackbar.Snackbar
 
+@SuppressLint("InflateParams")
 class CustomSnackBar(
-    private val context: Context,
-    private val view: View,
-    private val message: String,
-    private val type: String
+    context: Context,
+    view: View,
+    message: String,
+    type: String
 ) {
-    private lateinit var snack: Snackbar
-
-    @SuppressLint("InflateParams")
-    fun show() {
-        snack = Snackbar.make(view, "", Snackbar.LENGTH_LONG)
+    init {
+        val snack = Snackbar.make(view, "", Snackbar.LENGTH_LONG)
         val layout = LayoutInflater.from(context).inflate(R.layout.custom_snack_bar, null, false)
         snack.view.setBackgroundColor(Color.TRANSPARENT)
         val snackLayout = snack.view as Snackbar.SnackbarLayout

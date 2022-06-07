@@ -32,7 +32,7 @@ class OnFailureListener(val context: Context, val parent: View, private val fsl:
                         parent,
                         context.resources.getString(R.string.ERROR_ACCOUNT_EXISTS_WITH_DIFFERENT_CREDENTIAL),
                         "error"
-                    ).show()
+                    )
                 }
                 "ERROR_WEAK_PASSWORD" -> {
                     CustomSnackBar(
@@ -40,7 +40,7 @@ class OnFailureListener(val context: Context, val parent: View, private val fsl:
                         parent,
                         context.resources.getString(R.string.ERROR_WEAK_PASSWORD),
                         "error"
-                    ).show()
+                    )
                 }
                 "ERROR_EMAIL_ALREADY_IN_USE" -> {
                     CustomSnackBar(
@@ -48,7 +48,7 @@ class OnFailureListener(val context: Context, val parent: View, private val fsl:
                         parent,
                         context.resources.getString(R.string.ERROR_EMAIL_ALREADY_IN_USE),
                         "error"
-                    ).show()
+                    )
                 }
                 "ERROR_CREDENTIAL_ALREADY_IN_USE" -> {
                     CustomSnackBar(
@@ -56,7 +56,7 @@ class OnFailureListener(val context: Context, val parent: View, private val fsl:
                         parent,
                         context.resources.getString(R.string.ERROR_CREDENTIAL_ALREADY_IN_USE),
                         "error"
-                    ).show()
+                    )
                 }
                 "ERROR_USER_DISABLED" -> {
                     CustomSnackBar(
@@ -64,7 +64,7 @@ class OnFailureListener(val context: Context, val parent: View, private val fsl:
                         parent,
                         context.resources.getString(R.string.ERROR_USER_DISABLED),
                         "error"
-                    ).show()
+                    )
                 }
                 "ERROR_USER_NOT_FOUND" -> {
                     CustomSnackBar(
@@ -72,7 +72,7 @@ class OnFailureListener(val context: Context, val parent: View, private val fsl:
                         parent,
                         context.resources.getString(R.string.ERROR_USER_NOT_FOUND),
                         "error"
-                    ).show()
+                    )
                 }
                 "ERROR_USER_TOKEN_EXPIRED" -> {
                     CustomSnackBar(
@@ -80,7 +80,7 @@ class OnFailureListener(val context: Context, val parent: View, private val fsl:
                         parent,
                         context.resources.getString(R.string.ERROR_USER_TOKEN_EXPIRED),
                         "error"
-                    ).show()
+                    )
                 }
                 "ERROR_INVALID_CREDENTIAL" -> {
                     CustomSnackBar(
@@ -88,7 +88,7 @@ class OnFailureListener(val context: Context, val parent: View, private val fsl:
                         parent,
                         context.resources.getString(R.string.ERROR_INVALID_CREDENTIAL),
                         "error"
-                    ).show()
+                    )
                 }
                 "ERROR_WRONG_PASSWORD" -> {
                     CustomSnackBar(
@@ -96,7 +96,7 @@ class OnFailureListener(val context: Context, val parent: View, private val fsl:
                         parent,
                         context.resources.getString(R.string.ERROR_WRONG_PASSWORD),
                         "error"
-                    ).show()
+                    )
                 }
                 "ERROR_OPERATION_NOT_ALLOWED" -> {
                     CustomSnackBar(
@@ -104,7 +104,7 @@ class OnFailureListener(val context: Context, val parent: View, private val fsl:
                         parent,
                         context.resources.getString(R.string.ERROR_OPERATION_NOT_ALLOWED),
                         "error"
-                    ).show()
+                    )
                 }
                 else -> {
                     CustomSnackBar(
@@ -112,7 +112,7 @@ class OnFailureListener(val context: Context, val parent: View, private val fsl:
                         parent,
                         context.resources.getString(R.string.ERROR_UNKNOWN),
                         "error"
-                    ).show()
+                    )
                 }
             }
         } else {
@@ -121,7 +121,7 @@ class OnFailureListener(val context: Context, val parent: View, private val fsl:
                 parent,
                 context.resources.getString(R.string.ERROR_UNKNOWN),
                 "error"
-            ).show()
+            )
         }
     }
 }

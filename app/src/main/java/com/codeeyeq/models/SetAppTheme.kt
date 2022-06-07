@@ -5,8 +5,8 @@ import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatDelegate
 import com.codeeyeq.R
 
-class SetAppTheme(private val context: Context) {
-    fun set() {
+class SetAppTheme(context: Context) {
+    init {
         when (Session(context).appTheme()) {
             "system" -> {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)

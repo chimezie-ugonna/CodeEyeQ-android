@@ -1,17 +1,17 @@
 <resources>
     <string name="app_name" translatable="false">CodeEyeQ</string>
-    <string name="app_version" translatable="false">1.0.0</string>
+    <string name="server_url" translatable="false">https://codeeyeq.herokuapp.com/api/v1/</string>
     <string name="web_client_id" translatable="false">45557246868-8qh72u4bmkopv6b632kgb85rahcd40d3.apps.googleusercontent.com</string>
-    <string name="empty" translatable="false"> </string>
+    <string name="app_version" translatable="false">1.0.0</string>
     <string name="log_in">Log In</string>
     <string name="login">Login</string>
     <string name="get_started">Get Started</string>
-    <string name="onboarding_title_1">Learn how to code</string>
-    <string name="onboarding_title_2">Debug and test</string>
-    <string name="onboarding_title_3">Peer to peer learning</string>
-    <string name="onboarding_description_1">Get the skills you need to create apps, websites and programs.</string>
-    <string name="onboarding_description_2">Answer all the quizzes given to you to master the art of coding.</string>
-    <string name="onboarding_description_3">Build your coding community while learning in peers.</string>
+    <string name="on_boarding_title_1">Learn how to code</string>
+    <string name="on_boarding_title_2">Debug and test</string>
+    <string name="on_boarding_title_3">Peer to peer learning</string>
+    <string name="on_boarding_description_1">Get the skills you need to create apps, websites and programs.</string>
+    <string name="on_boarding_description_2">Answer all the quizzes given to you to master the art of coding.</string>
+    <string name="on_boarding_description_3">Build your coding community while learning in peers.</string>
     <string name="create_account">Create Account</string>
     <string name="full_name">Full Name</string>
     <string name="email">Email</string>
@@ -20,8 +20,6 @@
     <string name="john_doe" translatable="false">John Doe</string>
     <string name="example_email" translatable="false">example@codeeyeq.com</string>
     <string name="forgot_password">Forgot Password</string>
-    <string name="google_signin">Sign in with Google</string>
-    <string name="google_signup">Sign up with Google</string>
     <string name="create_an_account_with_one_of_the_following_options">Create an account with one of the following options.</string>
     <string name="log_in_with_one_of_the_following_options">Log in with one of the following options.</string>
     <string name="full_name_error_message">Please enter your first and last name.</string>
@@ -45,4 +43,14 @@
     <string name="server_error_message">Operation failed because a server error occurred.</string>
     <string name="password_link_sent">Password reset link sent.</string>
     <string name="no_internet">There is no internet connection.</string>
+    <string name="go_back">Go back</string>
+    <string name="sign_up_with_apple">Sign up with apple.</string>
+    <string name="sign_up_with_google">Sign up with google.</string>
+    <string name="sign_in_with_apple">Sign in with apple.</string>
+    <string name="sign_in_with_google">Sign in with google.</string>
+    <string name="password_visibility_show_and_hide_password">Password visibility, show and hide password.</string>
+    <string name="home_icon_go_to_home_page">Home icon, go to home page.</string>
+    <string name="learn_icon_go_to_learn_page">Learn icon, go to learn page.</string>
+    <string name="collaborate_icon_go_to_collaborate_page">Collaborate icon, go to collaborate page.</string>
+    <string name="more_icon_go_to_more_page">More icon, go to more page.</string>
 </resources>

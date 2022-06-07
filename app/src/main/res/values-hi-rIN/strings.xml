@@ -2,19 +2,17 @@
 <resources>
     <string name="log_in">लॉग इन करें</string>
     <string name="get_started">शुरू हो जाओ</string>
-    <string name="onboarding_title_1">कोड करना सीखें</string>
-    <string name="onboarding_title_2">डीबग और परीक्षण</string>
-    <string name="onboarding_title_3">पीयर टू पीयर लर्निंग</string>
-    <string name="onboarding_description_1">एप्लिकेशन, वेबसाइट और प्रोग्राम बनाने के लिए आवश्यक कौशल प्राप्त करें।</string>
-    <string name="onboarding_description_2">कोडिंग की कला में महारत हासिल करने के लिए आपको दिए गए सभी प्रश्नों के उत्तर दें।</string>
-    <string name="onboarding_description_3">साथियों में सीखते हुए अपना कोडिंग समुदाय बनाएं।</string>
+    <string name="on_boarding_title_1">कोड करना सीखें</string>
+    <string name="on_boarding_title_2">डीबग और परीक्षण</string>
+    <string name="on_boarding_title_3">पीयर टू पीयर लर्निंग</string>
+    <string name="on_boarding_description_1">एप्लिकेशन, वेबसाइट और प्रोग्राम बनाने के लिए आवश्यक कौशल प्राप्त करें।</string>
+    <string name="on_boarding_description_2">कोडिंग की कला में महारत हासिल करने के लिए आपको दिए गए सभी प्रश्नों के उत्तर दें।</string>
+    <string name="on_boarding_description_3">साथियों में सीखते हुए अपना कोडिंग समुदाय बनाएं।</string>
     <string name="create_account">खाता बनाएं</string>
     <string name="full_name">पूरा नाम</string>
     <string name="email">ईमेल</string>
     <string name="password">पासवर्ड</string>
     <string name="forgot_password">पासवर्ड भूल गए</string>
-    <string name="google_signin">Google के साथ साइन इन करें</string>
-    <string name="google_signup">Google के साथ साइन अप करें</string>
     <string name="create_an_account_with_one_of_the_following_options">निम्नलिखित विकल्पों में से एक के साथ एक खाता बनाएँ।</string>
     <string name="login">लॉग इन करें</string>
     <string name="log_in_with_one_of_the_following_options">निम्न विकल्पों में से किसी एक के साथ लॉग इन करें।</string>
@@ -39,4 +37,14 @@
     <string name="server_error_message">सर्वर त्रुटि उत्पन्न होने के कारण कार्रवाई विफल रही।</string>
     <string name="password_link_sent">पासवर्ड रीसेट लिंक भेजा गया।</string>
     <string name="no_internet">कोई इंटरनेट कनेक्शन नहीं है।</string>
+    <string name="go_back">वापस जाओ</string>
+    <string name="sign_up_with_apple">सेब के साथ साइन अप करें।</string>
+    <string name="sign_up_with_google">गूगल के साथ साइन अप करें।</string>
+    <string name="sign_in_with_apple">सेब के साथ साइन इन करें।</string>
+    <string name="sign_in_with_google">गूगल के साथ साइन इन करें।</string>
+    <string name="password_visibility_show_and_hide_password">पासवर्ड दृश्यता, पासवर्ड दिखाएं और छुपाएं।</string>
+    <string name="home_icon_go_to_home_page">होम आइकन, होम पेज पर जाएं।</string>
+    <string name="learn_icon_go_to_learn_page">लर्न आइकन, लर्न पेज पर जाएं।</string>
+    <string name="collaborate_icon_go_to_collaborate_page">सहयोग करें आइकन, सहयोग पृष्ठ पर जाएं।</string>
+    <string name="more_icon_go_to_more_page">अधिक आइकन, अधिक पृष्ठ पर जाएं।</string>
 </resources>

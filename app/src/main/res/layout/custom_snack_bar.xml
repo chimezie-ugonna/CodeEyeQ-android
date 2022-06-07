@@ -19,7 +19,7 @@
             android:layout_height="@dimen/icons"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
-            android:contentDescription="@string/empty"
+            android:contentDescription="@null"
             android:src="@mipmap/error_clear" />
 
         <TextView

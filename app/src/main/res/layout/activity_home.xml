@@ -38,7 +38,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/interact_layout"
+        android:id="@+id/collaborate_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="?attr/white_black"
@@ -84,7 +84,7 @@
                 android:layout_width="@dimen/icons"
                 android:layout_height="@dimen/icons"
                 android:layout_gravity="center"
-                android:contentDescription="@string/empty"
+                android:contentDescription="@string/home_icon_go_to_home_page"
                 android:src="@drawable/home" />
 
             <TextView
@@ -112,7 +112,7 @@
                 android:layout_width="@dimen/icons"
                 android:layout_height="@dimen/icons"
                 android:layout_gravity="center"
-                android:contentDescription="@string/empty"
+                android:contentDescription="@string/learn_icon_go_to_learn_page"
                 android:src="@drawable/learn_outline" />
 
             <TextView
@@ -128,7 +128,7 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/interact_icon_parent"
+            android:id="@+id/collaborate_icon_parent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -136,15 +136,15 @@
             android:hapticFeedbackEnabled="true">
 
             <ImageView
-                android:id="@+id/interact_icon"
+                android:id="@+id/collaborate_icon"
                 android:layout_width="@dimen/icons"
                 android:layout_height="@dimen/icons"
                 android:layout_gravity="center"
-                android:contentDescription="@string/empty"
-                android:src="@drawable/interact_outline" />
+                android:contentDescription="@string/collaborate_icon_go_to_collaborate_page"
+                android:src="@drawable/collaborate_outline" />
 
             <TextView
-                android:id="@+id/interact_dot"
+                android:id="@+id/collaborate_dot"
                 android:layout_width="@dimen/padding"
                 android:layout_height="@dimen/padding"
                 android:layout_gravity="center"
@@ -168,7 +168,7 @@
                 android:layout_width="@dimen/icons"
                 android:layout_height="@dimen/icons"
                 android:layout_gravity="center"
-                android:contentDescription="@string/empty"
+                android:contentDescription="@string/more_icon_go_to_more_page"
                 android:src="@drawable/more_outline" />
 
             <TextView
@@ -182,8 +182,6 @@
                 android:textSize="@dimen/large"
                 android:visibility="gone" />
         </FrameLayout>
-
-
     </LinearLayout>
 
 </FrameLayout>

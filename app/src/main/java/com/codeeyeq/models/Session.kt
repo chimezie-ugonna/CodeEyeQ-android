@@ -20,4 +20,31 @@ class Session(context: Context) {
     fun appTheme(): String? {
         return sp.getString("appTheme", "system")
     }
+
+    fun deviceToken(data: String) {
+        spe.putString("deviceToken", data)
+        spe.commit()
+    }
+
+    fun deviceToken(): String? {
+        return sp.getString("deviceToken", "")
+    }
+
+    fun encryptedTokenIv(data: String) {
+        spe.putString("encryptedTokenIv", data)
+        spe.commit()
+    }
+
+    fun encryptedTokenIv(): String? {
+        return sp.getString("encryptedTokenIv", "")
+    }
+
+    fun encryptedToken(data: String) {
+        spe.putString("encryptedToken", data)
+        spe.commit()
+    }
+
+    fun encryptedToken(): String? {
+        return sp.getString("encryptedToken", "")
+    }
 }

@@ -7,12 +7,12 @@ import android.widget.ImageView
 import com.codeeyeq.R
 
 class PasswordVisibility(
-    private val box: EditText,
-    private val img: ImageView,
-    private val status: String,
-    private val state: String
+    box: EditText,
+    img: ImageView,
+    status: String,
+    state: String
 ) {
-    fun change() {
+    init {
         if (status == "visible") {
             when (state) {
                 "normal" -> {

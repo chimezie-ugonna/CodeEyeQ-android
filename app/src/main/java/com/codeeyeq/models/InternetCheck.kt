@@ -26,7 +26,7 @@ class InternetCheck(private val context: Context, val parent: View) {
                 parent,
                 context.resources.getString(R.string.no_internet),
                 "error"
-            ).show()
+            )
         }
         return returnValue
     }

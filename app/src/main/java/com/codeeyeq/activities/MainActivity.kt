@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
     private var descriptions = ArrayList<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        SetAppTheme(this).set()
+        SetAppTheme(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -46,9 +46,9 @@ class MainActivity : AppCompatActivity() {
 
         shortAnimationDuration = resources.getInteger(android.R.integer.config_mediumAnimTime)
 
-        titles.add(resources.getString(R.string.onboarding_title_1))
-        titles.add(resources.getString(R.string.onboarding_title_2))
-        titles.add(resources.getString(R.string.onboarding_title_3))
+        titles.add(resources.getString(R.string.on_boarding_title_1))
+        titles.add(resources.getString(R.string.on_boarding_title_2))
+        titles.add(resources.getString(R.string.on_boarding_title_3))
 
         titleSwitcher = findViewById(R.id.titleSwitcher)
         titleSwitcher.setFactory {
@@ -65,9 +65,9 @@ class MainActivity : AppCompatActivity() {
         titleSwitcher.inAnimation.duration = shortAnimationDuration.toLong()
         titleSwitcher.outAnimation.duration = shortAnimationDuration.toLong()
 
-        descriptions.add(resources.getString(R.string.onboarding_description_1))
-        descriptions.add(resources.getString(R.string.onboarding_description_2))
-        descriptions.add(resources.getString(R.string.onboarding_description_3))
+        descriptions.add(resources.getString(R.string.on_boarding_description_1))
+        descriptions.add(resources.getString(R.string.on_boarding_description_2))
+        descriptions.add(resources.getString(R.string.on_boarding_description_3))
 
         descriptionSwitcher = findViewById(R.id.descriptionSwitcher)
         descriptionSwitcher.setFactory {
@@ -94,11 +94,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, LogIn::class.java))
         }
 
-        Handler(Looper.getMainLooper()).postDelayed({ change1() }, 3000)
-
         if (!isGooglePlayServicesAvailable()) {
             GoogleApiAvailability.getInstance().makeGooglePlayServicesAvailable(this)
         }
+
+        Handler(Looper.getMainLooper()).postDelayed({ change1() }, 3000)
     }
 
     override fun onResume() {
