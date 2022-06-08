@@ -1,4 +1,4 @@
-package com.codeeyeq.activities
+package com.codeeyeq.controller
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
@@ -17,7 +17,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.codeeyeq.R
-import com.codeeyeq.models.SetAppTheme
+import com.codeeyeq.model.SetAppTheme
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GoogleApiAvailability
 import com.google.firebase.auth.ktx.auth

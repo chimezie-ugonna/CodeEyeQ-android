@@ -1,4 +1,4 @@
-package com.codeeyeq.models
+package com.codeeyeq.model
 
 import android.animation.Animator
 import android.animation.ObjectAnimator

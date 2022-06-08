@@ -1,4 +1,4 @@
-package com.codeeyeq.models
+package com.codeeyeq.model
 
 import android.annotation.SuppressLint
 import android.content.Context

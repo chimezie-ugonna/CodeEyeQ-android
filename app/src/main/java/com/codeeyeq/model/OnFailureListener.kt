@@ -1,10 +1,10 @@
-package com.codeeyeq.models
+package com.codeeyeq.model
 
 import android.content.Context
 import android.view.View
 import com.codeeyeq.R
-import com.codeeyeq.activities.GetStarted
-import com.codeeyeq.activities.LogIn
+import com.codeeyeq.controller.GetStarted
+import com.codeeyeq.controller.LogIn
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.auth.ktx.auth

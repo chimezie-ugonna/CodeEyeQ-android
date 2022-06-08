@@ -1,4 +1,4 @@
-package com.codeeyeq.models
+package com.codeeyeq.model
 
 import android.content.Context
 import android.security.keystore.KeyGenParameterSpec

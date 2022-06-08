@@ -1,4 +1,4 @@
-package com.codeeyeq.activities
+package com.codeeyeq.controller
 
 import android.app.Activity
 import android.content.Context
@@ -16,7 +16,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.codeeyeq.R
-import com.codeeyeq.models.*
+import com.codeeyeq.model.*
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.ktx.auth

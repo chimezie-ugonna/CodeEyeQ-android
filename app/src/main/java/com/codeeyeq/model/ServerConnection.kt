@@ -1,4 +1,4 @@
-package com.codeeyeq.models
+package com.codeeyeq.model
 
 import android.content.Context
 import android.os.Build
@@ -6,9 +6,9 @@ import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.codeeyeq.R
-import com.codeeyeq.activities.GetStarted
-import com.codeeyeq.activities.Home
-import com.codeeyeq.activities.LogIn
+import com.codeeyeq.controller.GetStarted
+import com.codeeyeq.controller.Home
+import com.codeeyeq.controller.LogIn
 import org.json.JSONException
 import org.json.JSONObject
 

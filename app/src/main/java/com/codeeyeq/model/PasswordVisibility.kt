@@ -1,4 +1,4 @@
-package com.codeeyeq.models
+package com.codeeyeq.model
 
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod

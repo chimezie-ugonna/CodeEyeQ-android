@@ -6,7 +6,7 @@
     android:background="?attr/white_black"
     android:paddingTop="@dimen/padding"
     android:paddingBottom="@dimen/padding"
-    tools:context=".activities.MainActivity">
+    tools:context=".controller.MainActivity">
 
     <TextView
         android:id="@+id/app_name"
