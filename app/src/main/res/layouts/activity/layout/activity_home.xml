@@ -4,60 +4,13 @@
     android:id="@+id/parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/white_black"
-    tools:context=".controller.Home">
+    android:background="?attr/tintedBlue_black"
+    tools:context=".controller.activities.Home">
 
-    <LinearLayout
-        android:id="@+id/home_layout"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="?attr/white_black"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/log_out"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/padding"
-            android:gravity="center"
-            android:text="@string/log_out"
-            android:textColor="?attr/blue_white"
-            android:textSize="@dimen/big" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/learn_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="?attr/white_black"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/collaborate_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="?attr/white_black"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/more_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="?attr/white_black"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-    </LinearLayout>
+        android:layout_height="match_parent" />
 
     <LinearLayout
         android:id="@+id/bottom_navigation"

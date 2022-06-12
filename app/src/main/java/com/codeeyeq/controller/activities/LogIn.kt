@@ -1,4 +1,4 @@
-package com.codeeyeq.controller
+package com.codeeyeq.controller.activities
 
 import android.app.Activity
 import android.content.Context
@@ -31,11 +31,7 @@ import com.google.firebase.messaging.FirebaseMessaging
 import org.json.JSONObject
 import java.util.*
 
-class GetStarted : AppCompatActivity() {
-    private lateinit var fullName: EditText
-    private lateinit var fullNameHeader: TextView
-    private lateinit var fullNameError: TextView
-    private var fullNameFieldState: String = "normal"
+class LogIn : AppCompatActivity() {
     private lateinit var email: EditText
     private lateinit var emailHeader: TextView
     private lateinit var emailError: TextView
@@ -63,12 +59,11 @@ class GetStarted : AppCompatActivity() {
                         account =
                             GoogleSignIn.getSignedInAccountFromIntent(result.data)
                                 .getResult(ApiException::class.java)
-
                         val credential = GoogleAuthProvider.getCredential(account.idToken, null)
                         Firebase.auth.signInWithCredential(credential)
                             .addOnCompleteListener(this) { task ->
                                 if (task.isSuccessful) {
-                                    createAccount(
+                                    logIn(
                                         Firebase.auth.currentUser?.uid,
                                         Firebase.auth.currentUser?.displayName,
                                         Firebase.auth.currentUser?.email
@@ -125,63 +120,9 @@ class GetStarted : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         SetAppTheme(this)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_get_started)
+        setContentView(R.layout.activity_log_in)
 
         fsl = FullScreenLoader(this)
-        fullNameHeader = findViewById(R.id.fullNameHeader)
-        fullNameError = findViewById(R.id.fullNameError)
-        fullName = findViewById(R.id.fullName)
-        fullName.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-            }
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                if (fullNameFieldState == "error" || fullNameFieldState == "success") {
-                    fullNameCheck()
-                }
-            }
-
-            override fun afterTextChanged(p0: Editable?) {
-
-            }
-        })
-        fullName.setOnFocusChangeListener { _, b ->
-            if (b) {
-                if (fullNameFieldState == "normal") {
-                    fullNameHeader.setTextColor(getColorResCompat(R.attr.blue))
-                    fullName.setBackgroundResource(R.drawable.snow_night_solid_blue_stroke)
-                    fullName.setCompoundDrawablesWithIntrinsicBounds(
-                        R.drawable.account_circle_active,
-                        0,
-                        0,
-                        0
-                    )
-                    fullName.compoundDrawablePadding =
-                        resources.getDimension(R.dimen.padding).toInt()
-                    fullNameError.text = ""
-                    fullNameError.visibility = View.GONE
-                    fullNameFieldState = "active"
-                }
-            } else {
-                if (fullNameFieldState == "active") {
-                    fullNameHeader.setTextColor(getColorResCompat(R.attr.grey))
-                    fullName.setBackgroundResource(R.drawable.snow_night_solid_grey_stroke)
-                    fullName.setCompoundDrawablesWithIntrinsicBounds(
-                        R.drawable.account_circle_normal,
-                        0,
-                        0,
-                        0
-                    )
-                    fullName.compoundDrawablePadding =
-                        resources.getDimension(R.dimen.padding).toInt()
-                    fullNameError.text = ""
-                    fullNameError.visibility = View.GONE
-                    fullNameFieldState = "normal"
-                }
-            }
-        }
-
         emailHeader = findViewById(R.id.emailHeader)
         emailError = findViewById(R.id.emailError)
         email = findViewById(R.id.email)
@@ -315,7 +256,7 @@ class GetStarted : AppCompatActivity() {
         gsc = GoogleSignIn.getClient(this, gso)
 
         findViewById<RelativeLayout>(R.id.back_con).setOnClickListener { finish() }
-        findViewById<RelativeLayout>(R.id.appleSignUp).setOnClickListener {
+        findViewById<RelativeLayout>(R.id.appleSignIn).setOnClickListener {
             fsl.show()
             provider = OAuthProvider.newBuilder("apple.com")
             provider.scopes = arrayOf("email", "name").toMutableList()
@@ -323,7 +264,7 @@ class GetStarted : AppCompatActivity() {
             val pending = Firebase.auth.pendingAuthResult
             if (pending != null) {
                 pending.addOnSuccessListener {
-                    createAccount(
+                    logIn(
                         it.user?.uid,
                         it.user?.displayName,
                         it.user?.email
@@ -338,7 +279,7 @@ class GetStarted : AppCompatActivity() {
             } else {
                 Firebase.auth.startActivityForSignInWithProvider(this, provider.build())
                     .addOnSuccessListener {
-                        createAccount(
+                        logIn(
                             it.user?.uid,
                             it.user?.displayName,
                             it.user?.email
@@ -353,35 +294,29 @@ class GetStarted : AppCompatActivity() {
                     )
             }
         }
-        findViewById<RelativeLayout>(R.id.googleSignUp).setOnClickListener {
+        findViewById<RelativeLayout>(R.id.googleSignIn).setOnClickListener {
             requestCode = 1
             onActivityResult.launch(gsc.signInIntent)
         }
-        findViewById<RelativeLayout>(R.id.button).setOnClickListener {
-            fullNameCheck()
+        findViewById<TextView>(R.id.forgotPassword).setOnClickListener {
             emailCheck()
-            passwordCheck()
-            if (fullName.text.isNotEmpty() && email.text.isNotEmpty() && password.text.isNotEmpty() && fullName.text.split(
-                    " "
-                ).size > 1 && fullName.text.split(" ")[0] != "" && fullName.text.split(
-                    " "
-                )[1] != ""
-                && android.util.Patterns.EMAIL_ADDRESS.matcher(email.text)
-                    .matches() && password.text.length >= 8
+            if (email.text.isNotEmpty() && android.util.Patterns.EMAIL_ADDRESS.matcher(
+                    email.text
+                )
+                    .matches()
             ) {
                 hideKeyboard()
                 if (InternetCheck(this, findViewById(R.id.parent)).status()) {
                     fsl.show()
-                    Firebase.auth.createUserWithEmailAndPassword(
-                        email.text.toString(),
-                        password.text.toString()
-                    )
-                        .addOnCompleteListener(this) { task ->
+                    Firebase.auth.sendPasswordResetEmail(email.text.toString())
+                        .addOnCompleteListener { task ->
                             if (task.isSuccessful) {
-                                createAccount(
-                                    Firebase.auth.currentUser?.uid,
-                                    fullName.text.toString(),
-                                    Firebase.auth.currentUser?.email,
+                                fsl.hide()
+                                CustomSnackBar(
+                                    this,
+                                    findViewById(R.id.parent),
+                                    getString(R.string.password_link_sent),
+                                    "success"
                                 )
                             }
                         }.addOnFailureListener(
@@ -394,40 +329,36 @@ class GetStarted : AppCompatActivity() {
                 }
             }
         }
-    }
-
-    private fun fullNameCheck() {
-        if (fullName.text.split(" ").size > 1 && fullName.text.split(" ")[0] != "" && fullName.text.split(
-                " "
-            )[1] != ""
-        ) {
-            fullNameHeader.setTextColor(getColorResCompat(R.attr.darkGreen))
-            fullName.setBackgroundResource(R.drawable.snow_night_solid_dark_green_stroke)
-            fullName.setCompoundDrawablesWithIntrinsicBounds(
-                R.drawable.account_circle_success,
-                0,
-                0,
-                0
-            )
-            fullName.compoundDrawablePadding =
-                resources.getDimension(R.dimen.padding).toInt()
-            fullNameError.text = ""
-            fullNameError.visibility = View.GONE
-            fullNameFieldState = "success"
-        } else {
-            fullNameHeader.setTextColor(getColorResCompat(R.attr.errorRed))
-            fullName.setBackgroundResource(R.drawable.snow_night_solid_error_red_stroke)
-            fullName.setCompoundDrawablesWithIntrinsicBounds(
-                R.drawable.account_circle_error,
-                0,
-                0,
-                0
-            )
-            fullName.compoundDrawablePadding =
-                resources.getDimension(R.dimen.padding).toInt()
-            fullNameError.text = getString(R.string.full_name_error_message)
-            fullNameError.visibility = View.VISIBLE
-            fullNameFieldState = "error"
+        findViewById<RelativeLayout>(R.id.button).setOnClickListener {
+            emailCheck()
+            passwordCheck()
+            if (email.text.isNotEmpty() && password.text.isNotEmpty() && android.util.Patterns.EMAIL_ADDRESS.matcher(
+                    email.text
+                )
+                    .matches() && password.text.length >= 8
+            ) {
+                hideKeyboard()
+                if (InternetCheck(this, findViewById(R.id.parent)).status()) {
+                    fsl.show()
+                    Firebase.auth.signInWithEmailAndPassword(
+                        email.text.toString(),
+                        password.text.toString()
+                    )
+                        .addOnCompleteListener(this) { task ->
+                            if (task.isSuccessful) {
+                                logIn(
+                                    Firebase.auth.currentUser?.uid, "", ""
+                                )
+                            }
+                        }.addOnFailureListener(
+                            OnFailureListener(
+                                this,
+                                findViewById(R.id.parent),
+                                fsl
+                            )
+                        )
+                }
+            }
         }
     }
 
@@ -505,23 +436,26 @@ class GetStarted : AppCompatActivity() {
         }
     }
 
-    private fun createAccount(
-        user_id: String?,
-        fullName: String?,
-        email: String?
-    ) {
+    private fun logIn(user_id: String?, fullName: String?, email: String?) {
         FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 Session(this).deviceToken(task.result)
-                ServerConnection(
-                    this, "createAccount", Request.Method.POST, "users/create",
-                    JSONObject().put("user_id", user_id.toString())
-                        .put(
-                            "full_name",
-                            if (fullName.toString() != "null") fullName.toString() else ""
-                        )
-                        .put("email", email.toString())
-                )
+                if (fullName != "" && email != "") {
+                    ServerConnection(
+                        this, "createAccount", Request.Method.POST, "users/create",
+                        JSONObject().put("user_id", user_id.toString())
+                            .put(
+                                "full_name",
+                                if (fullName.toString() != "null") fullName.toString() else ""
+                            )
+                            .put("email", email.toString())
+                    )
+                } else {
+                    ServerConnection(
+                        this, "logIn", Request.Method.POST, "logins/create",
+                        JSONObject().put("user_id", user_id.toString())
+                    )
+                }
             }
         }.addOnFailureListener(
             OnFailureListener(
@@ -532,7 +466,7 @@ class GetStarted : AppCompatActivity() {
         )
     }
 
-    fun created(l: Int) {
+    fun loggedIn(l: Int) {
         if (l == 1) {
             startActivity(Intent(this, Home::class.java))
             finish()

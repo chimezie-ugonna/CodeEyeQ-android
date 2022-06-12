@@ -23,8 +23,10 @@
         <attr name="white_blue" format="color" />
         <attr name="white_black" format="color" />
         <attr name="snow_night" format="color" />
-        <attr name="tintedBlue_white" format="color" />
+        <attr name="tintedBlue_tintedWhite" format="color" />
         <attr name="borderGrey_white" format="color" />
         <attr name="transparent" format="color" />
+        <attr name="tintedBlue_black" format="color" />
+        <attr name="white_tintedWhite" format="color" />
     </declare-styleable>
 </resources>

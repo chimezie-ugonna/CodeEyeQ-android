@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_tinted_white_solid">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selected_list_item_ripple_curved_edges"
+        android:padding="@dimen/padding">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img"
+            android:layout_width="@dimen/circular_img"
+            android:layout_height="@dimen/circular_img"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/your_profile_picture"
+            android:src="@color/grey_shade_1"
+            app:civ_border_color="?attr/borderGrey_white"
+            app:civ_border_width="@dimen/double_thin" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/padding"
+            android:layout_marginEnd="@dimen/padding"
+            android:layout_toStartOf="@+id/forward"
+            android:layout_toEndOf="@+id/img"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="start|center_vertical"
+                android:maxLines="1"
+                android:text="@string/full_name"
+                android:textColor="?attr/blue_white"
+                android:textSize="@dimen/big" />
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="start|center_vertical"
+                android:maxLines="1"
+                android:text="@string/email"
+                android:textColor="?attr/blue_white"
+                android:textSize="@dimen/normal" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/forward"
+            android:layout_width="@dimen/small_icons"
+            android:layout_height="@dimen/small_icons"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/arrow_forward"
+            android:src="@drawable/arrow_forward" />
+    </RelativeLayout>
+</RelativeLayout>

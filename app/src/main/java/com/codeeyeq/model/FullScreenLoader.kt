@@ -55,7 +55,7 @@ class FullScreenLoader(var context: Context) : Animator.AnimatorListener {
         languages.add(R.drawable.languages_xml)
 
         view =
-            LayoutInflater.from(context).inflate(R.layout.full_screen_loader, null, false)
+            LayoutInflater.from(context).inflate(R.layout.content_full_screen_loader, null, false)
         parent = view.findViewById(R.id.parent)
         img = view.findViewById(R.id.img)
         animate = ObjectAnimator.ofFloat(img, "rotation", 0f, 360f)

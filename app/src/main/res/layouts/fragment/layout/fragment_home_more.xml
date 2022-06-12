@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.fragments.HomeFragmentMore">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/expanded_toolbar_height"
+            android:background="?attr/tintedBlue_black"
+            app:collapsedTitleGravity="center"
+            app:collapsedTitleTextAppearance="@style/toolbar_collapsed_text_appearance"
+            app:collapsedTitleTextColor="?attr/black_white"
+            app:expandedTitleGravity="start|bottom"
+            app:expandedTitleMargin="@dimen/padding"
+            app:expandedTitleTextAppearance="@style/toolbar_expanded_text_appearance"
+            app:expandedTitleTextColor="?attr/black_white"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:title="@string/more"
+            app:titleCollapseMode="fade">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:paddingStart="@dimen/double_paragraph"
+                android:paddingEnd="@dimen/padding"
+                app:contentInsetEnd="0sp"
+                app:contentInsetEndWithActions="0sp"
+                app:contentInsetLeft="0sp"
+                app:contentInsetRight="0sp"
+                app:contentInsetStart="0sp"
+                app:contentInsetStartWithNavigation="0sp"
+                app:layout_collapseMode="pin">
+
+                <ImageView
+                    android:id="@+id/share"
+                    android:layout_width="@dimen/icons"
+                    android:layout_height="@dimen/icons"
+                    android:layout_gravity="end|center_vertical"
+                    android:background="@drawable/selected_icon_ripple_circle"
+                    android:contentDescription="@string/share_profile_button"
+                    android:src="@drawable/share" />
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -20,7 +20,7 @@ class CustomSnackBar(
 ) {
     init {
         val snack = Snackbar.make(view, "", Snackbar.LENGTH_LONG)
-        val layout = LayoutInflater.from(context).inflate(R.layout.custom_snack_bar, null, false)
+        val layout = LayoutInflater.from(context).inflate(R.layout.content_snack_bar, null, false)
         snack.view.setBackgroundColor(Color.TRANSPARENT)
         val snackLayout = snack.view as Snackbar.SnackbarLayout
         snackLayout.setPadding(0, 0, 0, 0)

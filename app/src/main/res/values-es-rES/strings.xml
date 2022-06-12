@@ -47,4 +47,19 @@
     <string name="learn_icon_go_to_learn_page">Ícono de aprendizaje, vaya a la página de aprendizaje.</string>
     <string name="collaborate_icon_go_to_collaborate_page">Ícono de colaboración, vaya a la página de colaboración.</string>
     <string name="more_icon_go_to_more_page">Más icono, ir a más página.</string>
+    <string name="your_profile_picture">Tu foto de perfil.</string>
+    <string name="arrow_forward">Flecha adelante</string>
+    <string name="an_icon">Un icono</string>
+    <string name="my_posts">Mis publicaciones</string>
+    <string name="saved">Salvado</string>
+    <string name="interests">Intereses</string>
+    <string name="membership">Afiliación</string>
+    <string name="push_notification">Notificación de inserción</string>
+    <string name="clear_cache">Limpiar cache</string>
+    <string name="about_codeeyeq">Acerca de CodeEyeQ</string>
+    <string name="privacy_policy">Política de privacidad</string>
+    <string name="help_support">Servicio de asistencia</string>
+    <string name="tell_a_friend">Dile a un amigo</string>
+    <string name="no_name">Sin nombre</string>
+    <string name="no_email">Sin correo electrónico</string>
 </resources>

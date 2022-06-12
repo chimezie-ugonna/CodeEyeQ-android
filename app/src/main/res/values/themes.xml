@@ -29,7 +29,24 @@
         <item name="white_blue">@color/white</item>
         <item name="white_black">@color/white</item>
         <item name="snow_night">@color/snow</item>
-        <item name="tintedBlue_white">@color/tinted_blue</item>
+        <item name="tintedBlue_tintedWhite">@color/tinted_blue</item>
+        <item name="tintedBlue_black">@color/tinted_blue</item>
+        <item name="white_tintedWhite">@color/white</item>
         <item name="transparent">@color/transparent_light</item>
+    </style>
+
+    <style name="Theme.CodeEyeQ.Home" parent="Theme.CodeEyeQ">
+        <item name="colorPrimaryDark">@color/tinted_blue</item>
+        <item name="android:statusBarColor">@color/tinted_blue</item>
+    </style>
+
+    <style name="toolbar_expanded_text_appearance">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/heading</item>
+    </style>
+
+    <style name="toolbar_collapsed_text_appearance">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/big</item>
     </style>
 </resources>

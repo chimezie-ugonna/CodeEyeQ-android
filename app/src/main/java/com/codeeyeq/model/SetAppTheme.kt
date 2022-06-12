@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatDelegate
 import com.codeeyeq.R
+import com.codeeyeq.controller.activities.Home
 
 class SetAppTheme(context: Context) {
     init {
@@ -23,7 +24,11 @@ class SetAppTheme(context: Context) {
             AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM -> {
                 when (context.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
                     Configuration.UI_MODE_NIGHT_NO -> {
-                        context.setTheme(R.style.Theme_CodeEyeQ)
+                        if (context is Home) {
+                            context.setTheme(R.style.Theme_CodeEyeQ_Home)
+                        } else {
+                            context.setTheme(R.style.Theme_CodeEyeQ)
+                        }
                     }
                     Configuration.UI_MODE_NIGHT_YES -> {
                         context.setTheme(R.style.Theme_CodeEyeQ_Night)
@@ -34,7 +39,11 @@ class SetAppTheme(context: Context) {
                 context.setTheme(R.style.Theme_CodeEyeQ_Night)
             }
             else -> {
-                context.setTheme(R.style.Theme_CodeEyeQ)
+                if (context is Home) {
+                    context.setTheme(R.style.Theme_CodeEyeQ_Home)
+                } else {
+                    context.setTheme(R.style.Theme_CodeEyeQ)
+                }
             }
         }
     }

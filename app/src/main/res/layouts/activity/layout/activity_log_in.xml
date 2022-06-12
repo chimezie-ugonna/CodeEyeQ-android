@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/white_black"
-    tools:context=".controller.GetStarted">
+    tools:context=".controller.activities.LogIn">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,7 +42,7 @@
                 android:layout_marginStart="@dimen/padding"
                 android:layout_toEndOf="@id/back_con"
                 android:gravity="center"
-                android:text="@string/create_account"
+                android:text="@string/log_in"
                 android:textColor="?attr/black_white"
                 android:textSize="@dimen/heading" />
         </RelativeLayout>
@@ -64,7 +64,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/paragraph"
                     android:gravity="start|center"
-                    android:text="@string/create_an_account_with_one_of_the_following_options"
+                    android:text="@string/log_in_with_one_of_the_following_options"
                     android:textColor="?attr/grey"
                     android:textSize="@dimen/big" />
 
@@ -75,7 +75,7 @@
                     android:orientation="horizontal">
 
                     <RelativeLayout
-                        android:id="@+id/appleSignUp"
+                        android:id="@+id/appleSignIn"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/padding"
@@ -90,12 +90,12 @@
                             android:layout_width="@dimen/icons"
                             android:layout_height="@dimen/icons"
                             android:layout_centerVertical="true"
-                            android:contentDescription="@string/sign_up_with_apple"
+                            android:contentDescription="@string/sign_in_with_apple"
                             android:src="@drawable/apple_logo" />
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:id="@+id/googleSignUp"
+                        android:id="@+id/googleSignIn"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/padding"
@@ -109,51 +109,16 @@
                             android:layout_width="@dimen/icons"
                             android:layout_height="@dimen/icons"
                             android:layout_centerVertical="true"
-                            android:contentDescription="@string/sign_up_with_google"
+                            android:contentDescription="@string/sign_in_with_google"
                             android:src="@drawable/google_logo" />
                     </RelativeLayout>
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/fullNameHeader"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/paragraph"
-                    android:text="@string/full_name"
-                    android:textColor="?attr/grey"
-                    android:textSize="@dimen/normal" />
-
-                <EditText
-                    android:id="@+id/fullName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/small_padding"
-                    android:background="@drawable/snow_night_solid_grey_stroke"
-                    android:drawableStart="@drawable/account_circle_normal"
-                    android:drawablePadding="@dimen/padding"
-                    android:gravity="start|center_vertical"
-                    android:hint="@string/john_doe"
-                    android:importantForAutofill="no"
-                    android:inputType="textCapWords"
-                    android:padding="@dimen/padding"
-                    android:textColor="?attr/black_white"
-                    android:textColorHint="?attr/grey" />
-
-                <TextView
-                    android:id="@+id/fullNameError"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/small_padding"
-                    android:gravity="start|center_vertical"
-                    android:textColor="?attr/errorRed"
-                    android:textSize="@dimen/small"
-                    android:visibility="gone" />
-
-                <TextView
                     android:id="@+id/emailHeader"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/padding"
+                    android:layout_marginTop="@dimen/paragraph"
                     android:text="@string/email"
                     android:textColor="?attr/grey"
                     android:textSize="@dimen/normal" />
@@ -239,6 +204,17 @@
                     android:textSize="@dimen/small"
                     android:visibility="gone" />
 
+                <TextView
+                    android:id="@+id/forgotPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="@dimen/padding"
+                    android:gravity="end|center"
+                    android:text="@string/forgot_password"
+                    android:textColor="?attr/blue_white"
+                    android:textSize="@dimen/big" />
+
                 <RelativeLayout
                     android:id="@+id/button"
                     android:layout_width="match_parent"
@@ -252,11 +228,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:text="@string/create_account"
+                        android:text="@string/log_in"
                         android:textColor="?attr/white_black"
                         android:textSize="@dimen/big" />
                 </RelativeLayout>
-
             </LinearLayout>
         </ScrollView>
 

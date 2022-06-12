@@ -6,9 +6,9 @@ import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.codeeyeq.R
-import com.codeeyeq.controller.GetStarted
-import com.codeeyeq.controller.Home
-import com.codeeyeq.controller.LogIn
+import com.codeeyeq.controller.activities.GetStarted
+import com.codeeyeq.controller.activities.Home
+import com.codeeyeq.controller.activities.LogIn
 import org.json.JSONException
 import org.json.JSONObject
 

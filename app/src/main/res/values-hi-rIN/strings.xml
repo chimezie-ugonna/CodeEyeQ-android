@@ -47,4 +47,19 @@
     <string name="learn_icon_go_to_learn_page">लर्न आइकन, लर्न पेज पर जाएं।</string>
     <string name="collaborate_icon_go_to_collaborate_page">सहयोग करें आइकन, सहयोग पृष्ठ पर जाएं।</string>
     <string name="more_icon_go_to_more_page">अधिक आइकन, अधिक पृष्ठ पर जाएं।</string>
+    <string name="your_profile_picture">आपका प्रोफ़ाइल चित्र।</string>
+    <string name="arrow_forward">आगे तीर</string>
+    <string name="an_icon">एक आइकन</string>
+    <string name="my_posts">मेरी पोस्ट</string>
+    <string name="saved">बचाया</string>
+    <string name="interests">रूचियाँ</string>
+    <string name="membership">सदस्यता</string>
+    <string name="push_notification">सर्वर पुश नोटीफिकेशन</string>
+    <string name="clear_cache">कैश को साफ़ करें</string>
+    <string name="about_codeeyeq">CodeEyeQ के बारे में</string>
+    <string name="privacy_policy">गोपनीयता नीति</string>
+    <string name="help_support">मदद समर्थन</string>
+    <string name="tell_a_friend">एक दोस्त बताओ</string>
+    <string name="no_name">कोई नाम नहीं</string>
+    <string name="no_email">कोई ईमेल नहीं</string>
 </resources>
