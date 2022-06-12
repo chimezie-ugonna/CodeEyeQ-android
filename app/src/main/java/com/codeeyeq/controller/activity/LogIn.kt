@@ -1,4 +1,4 @@
-package com.codeeyeq.controller.activities
+package com.codeeyeq.controller.activity
 
 import android.app.Activity
 import android.content.Context

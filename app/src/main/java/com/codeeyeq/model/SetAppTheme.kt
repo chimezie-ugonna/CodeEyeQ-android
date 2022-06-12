@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatDelegate
 import com.codeeyeq.R
-import com.codeeyeq.controller.activities.Home
+import com.codeeyeq.controller.activity.Home
 
 class SetAppTheme(context: Context) {
     init {

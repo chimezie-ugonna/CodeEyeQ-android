@@ -1,4 +1,4 @@
-package com.codeeyeq.controller.fragments
+package com.codeeyeq.controller.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

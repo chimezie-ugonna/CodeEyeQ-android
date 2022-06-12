@@ -1,4 +1,4 @@
-package com.codeeyeq.adapters
+package com.codeeyeq.adapter
 
 import android.content.Context
 import android.view.LayoutInflater

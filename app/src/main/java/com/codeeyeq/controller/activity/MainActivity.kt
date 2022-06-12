@@ -1,4 +1,4 @@
-package com.codeeyeq.controller.activities
+package com.codeeyeq.controller.activity
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter

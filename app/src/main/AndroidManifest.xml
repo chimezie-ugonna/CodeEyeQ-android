@@ -22,7 +22,7 @@
         </service>
 
         <activity
-            android:name=".controller.activities.MainActivity"
+            android:name=".controller.activity.MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:screenOrientation="portrait"
@@ -36,21 +36,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".controller.activities.Home"
+            android:name=".controller.activity.Home"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".controller.activities.GetStarted"
+            android:name=".controller.activity.GetStarted"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".controller.activities.LogIn"
+            android:name=".controller.activity.LogIn"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:screenOrientation="portrait"

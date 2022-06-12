@@ -1,4 +1,4 @@
-package com.codeeyeq.adapters
+package com.codeeyeq.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.codeeyeq.R
-import com.codeeyeq.controller.activities.Home
+import com.codeeyeq.controller.activity.Home
 import com.codeeyeq.data.MoreListChild
 
 class MoreListChildAdapter(val context: Context, val data: ArrayList<MoreListChild>) :

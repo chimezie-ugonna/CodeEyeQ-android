@@ -1,4 +1,4 @@
-package com.codeeyeq.controller.fragments
+package com.codeeyeq.controller.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,8 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_IDLE
 import com.codeeyeq.R
-import com.codeeyeq.adapters.MoreListParentAdapter
-import com.codeeyeq.controller.activities.Home
+import com.codeeyeq.adapter.MoreListParentAdapter
+import com.codeeyeq.controller.activity.Home
 import com.codeeyeq.data.MoreListChild
 import com.codeeyeq.data.MoreListParent
 import com.codeeyeq.model.NoDividerListItemDecoration

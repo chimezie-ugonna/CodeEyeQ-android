@@ -3,8 +3,8 @@ package com.codeeyeq.model
 import android.content.Context
 import android.view.View
 import com.codeeyeq.R
-import com.codeeyeq.controller.activities.GetStarted
-import com.codeeyeq.controller.activities.LogIn
+import com.codeeyeq.controller.activity.GetStarted
+import com.codeeyeq.controller.activity.LogIn
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.auth.ktx.auth

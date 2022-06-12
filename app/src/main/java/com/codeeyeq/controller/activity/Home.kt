@@ -1,4 +1,4 @@
-package com.codeeyeq.controller.activities
+package com.codeeyeq.controller.activity
 
 import android.app.Activity
 import android.content.Context
@@ -17,10 +17,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.android.volley.Request
 import com.codeeyeq.R
-import com.codeeyeq.controller.fragments.HomeFragmentCollaborate
-import com.codeeyeq.controller.fragments.HomeFragmentHome
-import com.codeeyeq.controller.fragments.HomeFragmentLearn
-import com.codeeyeq.controller.fragments.HomeFragmentMore
+import com.codeeyeq.controller.fragment.HomeFragmentCollaborate
+import com.codeeyeq.controller.fragment.HomeFragmentHome
+import com.codeeyeq.controller.fragment.HomeFragmentLearn
+import com.codeeyeq.controller.fragment.HomeFragmentMore
 import com.codeeyeq.model.*
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
