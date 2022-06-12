@@ -62,4 +62,6 @@
     <string name="tell_a_friend">Dile a un amigo</string>
     <string name="no_name">Sin nombre</string>
     <string name="no_email">Sin correo electrónico</string>
+    <string name="share_profile_button">Botón compartir perfil.</string>
+    <string name="more">Más</string>
 </resources>

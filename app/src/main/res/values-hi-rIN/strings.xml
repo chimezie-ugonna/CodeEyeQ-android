@@ -62,4 +62,6 @@
     <string name="tell_a_friend">एक दोस्त बताओ</string>
     <string name="no_name">कोई नाम नहीं</string>
     <string name="no_email">कोई ईमेल नहीं</string>
+    <string name="share_profile_button">प्रोफ़ाइल साझा करें बटन।</string>
+    <string name="more">अधिक</string>
 </resources>
